@@ -1,0 +1,238 @@
+
+
+
+
+
+/*  Universal css classes  */
+
+	body, input, textarea{font-family:Roboto;font-size:14px;letter-spacing:0.06em;}
+	html, body, ul, li, p{padding:0px;margin:0px;}
+
+
+	h1, h2, h3, h4, h5, p{padding:0px;margin:0px;}
+	 p{font-size: 14px;
+		font-weight: normal;
+		line-height: 21px;}
+
+
+	/*  Common css classes  */
+
+
+	body{margin:0px;
+			padding:0px;
+			background-size:cover;
+			font-family:'cursive',roboto; font-weight:normal;background-color:#f7f7f7; font-size:20px;}
+
+
+	h2{font-size: 120px;
+		text-transform: uppercase;
+		line-height: 100px;padding: 20px 0px 8px 0px;}
+	h3{font-size: 65px;
+		line-height: 63px;
+		padding: 70px 0 32px;}
+
+
+	#Bodycontainer{/* width:100%; margin:0px auto; */}
+
+	/* Header css starts from here */
+	header{display:flex;
+		width: 90%;
+		margin: 0px auto;}/* #c6f7c6 padding:20px;*/
+	header > section{}
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++                             Testing for ripple effect */
+
+
+	header > section > .titlepic > span{background: #fcfcfc;
+		
+		width: 210px;
+		height: 210px;
+		border-radius: 50%;
+		position: absolute;
+		display: block;
+		z-index:-1;
+		left: 64px;
+		top: 0px;
+		border: 2px solid transparent;
+	box-shadow: 0px 0px 31px #d8b5cc;}
+	header > section > .titlepic::before {
+		opacity:0;
+		background: #f4f4f4;
+		content: '';
+		width: 210px;
+		height: 210px;
+		border-radius: 50%;
+		position: absolute;
+		display: block;
+		z-index:-6;
+		left: 64px;
+		top: 0px;
+		border:2px solid rgba(0, 0, 0, 0.2);
+		
+		/* Safari 4.0 - 8.0 */
+	  
+	   -webkit-animation:  ripple 4s linear 2s infinite ;
+	  animation:  ripple 4s linear 2s infinite ;
+	  
+	}
+
+
+	header > section > .titlepic::after {
+		opacity:0;
+		background: #f4f4f4;
+		content: '';
+		width: 210px;
+		height: 210px;
+		border-radius: 50%;
+		position: absolute;
+		display: block;
+		z-index:-6;
+		left: 64px;
+		top: 0px;
+		border:2px solid rgba(0, 0, 0, 0.2);
+		
+		/* Safari 4.0 - 8.0 */
+	  
+	   -webkit-animation:  ripple 2s linear 2s infinite ;
+	  animation:  ripple 2s linear 2s infinite ;
+	  
+	}
+
+
+
+
+
+
+
+/* Safari 4.0 - 8.0 */
+	@-webkit-keyframes ripple {
+	  from {opacity: 1;
+		transform: scale3d(0.75,0.75,1);}
+		
+		
+	  to {opacity: 0;
+		transform: scale3d(1.5,1.5,1);}
+	}
+
+/* Standard syntax */
+	@keyframes ripple {
+	  from {opacity: 1;
+		transform: scale3d(0.75,0.75,1);}
+	  to {opacity: 0;
+		transform: scale3d(1.5,1.5,1);}
+	}
+
+
+
+
+
+/*  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Yellow circle behind pic */
+
+
+	header > section > .titlepic{
+		
+		
+		position: relative;
+		padding: 31px 0px 0px 15px;
+		display: inline-block;
+		z-index: 10;
+		width: 100%;}	
+		/* > section > .titlepic */
+	header:after{background: #ebded6;
+		content: '';
+		width: 100%;
+		height: 400px;
+		position: absolute;
+		display: block;
+		z-index: -1;
+		left: 0px;
+		top:261px;
+		}
+
+	header > section:nth-child(1){width:30%;}
+	header > section:nth-child(2){width: 70%;
+		z-index: 10;
+		position: relative;background: #ebded6;
+		}
+	header > section:nth-child(2) > article:nth-child(1){background: #f7f7f7;}
+	header > section:nth-child(2) > article:nth-child(3), header > section:nth-child(2) > article:nth-child(4), header > section:nth-child(2) > article:nth-child(5){display:inline-block;margin: 30px 23px 70px 0;}
+		
+	header > section:nth-child(2) > article:nth-child(1) > p{padding-bottom: 12px;font-size: 17px;
+		font-weight: bold;
+
+	}
+	
+	
+	header > section:nth-child(2) > article:nth-child(2){background:#ebded6;}
+
+
+/* Menu css starts from here */
+
+	nav{background:red;padding:20px;}
+
+/* Header css ends here */
+
+
+
+
+
+
+/* body css starts from here */
+
+	
+	#Containerbody{background:#e0d6cd;}
+	#Containerbody > section > h3{padding-bottom:100px;}
+	#Containerbody > section{width: 90%;margin: 0px auto;}
+	#Containerbody > section > article{display: inline-block;width:41%;}
+	#Containerbody > section:nth-child(1) > article:nth-child(3), #Containerbody > section:nth-child(2) > article:nth-child(2){border-left:1px solid #282b46;
+		position: relative;
+		padding:0px 0px 50px 16%;}
+	#Containerbody > section:nth-child(2) > article:nth-child(2){padding-bottom:130px;}
+	#Containerbody > section:nth-child(1) > article:nth-child(3):before, #Containerbody > section:nth-child(2) > article:nth-child(2):before{background: #ebded6;
+		content: '';
+		position: absolute;
+		left: -13px;
+		display: inline-block;
+		width: 20px;
+		height: 20px;border:2px solid #282b46;border-radius:50%;}
+	
+	
+
+/* body css ends here */
+
+
+
+
+
+
+
+/* Footer css starts from here */
+	#Footer{background:#ebded6;padding:20px 20px 80px 20px;}
+	#Footer > section{width: 90%;margin: 0px auto;}
+	
+	#Footer > section > ul{width: 43%;display: inline-block;margin: 0px 3%;}
+	#Footer > section > ul > li{padding:10px 0 7px 0;}
+	
+	/* 	Progress bar design */
+	#Footer aside{width: 35%;
+		height: 5px;
+		background:#ffae16;
+		display: inline-block;
+		float: right;
+		margin-top: 8px;}
+	#Footer aside span{width: 60%;background:#000636;height: 5px;display:flex;}
+	
+
+
+/* Footer css ends here */
+
+
+
+
+
+
+
+
+
+

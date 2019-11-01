@@ -1,0 +1,14 @@
+ls : to show the contents of the directory or folder
+git log :
+git init : 
+git add : to add
+git commit :
+git status :  for the status of the current file
+git diff : differentiation of the file which has been edited
+git commit -m "comment for the changes" : for updating a changed file with certain type of changes.
+cd Desktop/git :
+
+
+git add .  : to add new files
+git commit "assets name and extesions"  : Commiting file
+git push  :  Pushing the files into github

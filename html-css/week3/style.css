@@ -1,0 +1,493 @@
+/*  Universal css classes  */
+
+	html, body, input, textarea, ul, li, p, h1, h2, h3, h4, h5{
+		padding:0px;
+		margin:0px;
+	}
+	ul, li{
+		list-style:none;
+	}
+	img{
+		width:100%; 
+		height:auto;
+	}
+
+	p{	font-size: 15px;
+		font-weight: normal;
+		line-height: 20px;
+		color: #606060;
+	}
+
+
+	/*  Common css classes  */
+
+
+	body{
+		font-family:'cursive',roboto; 
+		font-weight:normal; 
+		font-size:15px;
+		background-color: #f2f4f8;
+		color:#606060;
+	}
+
+	h2{
+		font-size: 28px;
+		text-transform: uppercase;
+		padding: 0px 0px 8px 0px;
+		letter-spacing:1px;
+		text-transform:uppercase;
+	}
+		
+	h3{
+		font-size: 17px;
+		padding:60px 0 25px;
+		letter-spacing:0px;
+		text-transform:uppercase;
+	}
+
+	.Hide{
+		display:none;
+	}
+	
+
+	/* Header css starts from here */
+	
+	header{
+		background:#ffffff;
+		border-bottom:1px solid #eeeeee;
+	}
+	header > section{
+		max-width: 80%;
+		margin: 0px auto;
+		padding:20px 0 20px 0;
+		display: flex;
+	}
+	header > section > div{
+		justify-content: space-between;
+	}
+	header > section > div:last-child{
+		flex:14 0 ;
+	}
+	header > section > div > h1 > a > img{
+		width:55px;
+	}
+	header > section > div > h1 > a{
+		font-size:28px;
+		font-weight: 700;
+		color:#606060;
+		text-decoration:none;
+		text-transform: uppercase;
+		display: flex;
+	}
+	header > section > div > h1 > a > span{
+		margin-top: 10px;
+	}
+	
+
+
+/* Menu css starts from here */
+
+
+	header > section > nav{
+		flex:0 ;margin-left: auto;
+	}
+		
+	header > section > nav > ul{
+		display:flex;
+		margin:19px 0 0 0; 
+		justify-content: end;
+	}
+	header > section > nav > ul > li{
+		font-size:15px;
+		margin: 0 6%;
+	}
+	header > section > nav > ul > li > a:link, header > section > nav > ul > li > a:visited{
+		color:#3d3d3d;
+		text-decoration:none;
+		font-weight:500;
+	}
+	header > section > nav > ul > li > a:active, header > section > nav > ul > li > a:hover{
+		color:#929292;
+		text-decoration:none;
+		font-weight:500;
+	}
+
+
+/* Header css ends here */
+
+
+
+
+/* body css starts from here */
+
+
+
+	.Containerbody{
+		max-width: 80%;
+		margin:0px auto;
+	}
+ 	.Containerbody > section{
+		background:#fff;
+		padding:4%;
+		margin: 22px 0;
+	}
+	.Containerbody > section:nth-child(2){
+		display:flex;
+		justify-content: space-between;
+		max-width:50%;
+		box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.13);
+		border-radius: 10px;
+		margin:22px auto;
+	}
+	.Containerbody > section > article{
+		width:100%;
+	}
+	.Containerbody > section > article > p{
+		font-size: 13px;
+		font-weight: normal;
+		line-height: 20px;
+	}
+	.Containerbody > section > article > h2{
+		text-align:center;
+	}
+	.Containerbody > section > article > progress{
+		width: 84%;
+		margin: 30px 8%;
+	}
+		
+	
+	/* Form css starts from here */
+
+	.formactions{
+		width: 100%;
+		margin: 0px auto;
+		padding: 5% 0 0 0;
+	}
+	.formactions > form > ul > li, .togglediv > ul > li{
+		display:inline-block;
+		width:45%;
+		margin:0px 0px 20px 0px;
+		position:relative;
+	}
+	.formactions > form > ul > li:nth-child(3), .formactions > form > ul > li:nth-child(6), .formactions > form > ul > li:last-child, .togglediv > ul > li:nth-child(3), .togglediv > ul > li:nth-child(6){
+		display:block;
+		margin-right: 0;width:auto;
+	}
+	.formactions > form > ul > li:nth-child(1), .formactions > form > ul > li:nth-child(4), .togglediv > ul > li:nth-child(1), .togglediv > ul > li:nth-child(4){
+		margin-right: 5%;
+	}
+	.formactions > form > ul > li > input, form > ul > li > label{
+		width: 80%;
+		display: block;
+	}
+	.formactions > form > ul > li > input, .formactions > form > input, .formactions > form > ul > li > select, .formactions > form > ul > li > textarea, .formactions > form > ul > li > div.togglediv > input, .togglediv > ul > li > input, .togglediv > ul > li > select, .togglediv > ul > li > textarea{
+		display: block;
+		width: 100%;
+		padding: 11px 12px;
+		font-size: 15px;	
+		line-height: 1.6;
+		color: #999;
+		background-color: #f4f7f9;
+		background-image: none;
+		border: 1px solid transparent;
+		border-radius: 3px;
+	}
+	.formactions > form > ul > li > textarea, .formactions > form > ul > li > div.togglediv > input, .togglediv > ul > li > textarea{
+		width:96%;
+		margin-bottom: 2px;
+	}
+	.formactions > form > input[type=submit]{
+		background: linear-gradient(180deg,#ac87fa,#4619a5);
+		width: auto;
+		margin:30px 0 0 auto;		
+		color: #fff;		
+		text-transform: uppercase;
+	}
+	.formactions > form > ul > li:last-child > label, .formactions > form > ul > li:last-child > input[type=checkbox]{
+		width:auto;
+		margin-right: 10px;
+		position:relative;
+		z-index:10;
+	}
+	.formactions > form > ul > li:last-child > input[type=checkbox]{
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	input[type=checkbox] + span:after {
+		content: "\2713";
+		font-size: 1rem;
+		font-weight: bold;
+		padding: 5px 9px;
+	} 
+	input[type=checkbox]:checked + span:after {
+		content: "";
+		padding:5px 14px;
+	} 
+	.formactions > form > ul > li:last-child > span{
+		padding: 5px 1px;
+		color: #999;
+		background-color: #f4f7f9;
+		background-image: none;
+		border:1px solid #0000000a;
+		border-radius: 3px;
+		position: relative;
+		z-index: 0;
+	}
+	 
+	form > ul > li > label {  
+	   display: inline-block;
+	   margin: 0px 0 8px 0;
+	   cursor: pointer;
+	}
+	 
+	 /* Default State */
+	.togglediv{
+		display:block;
+		margin-top: 20px;
+	}
+	 .togglediv > h2{
+		margin-bottom:20px;
+	}
+	 
+	 /* Toggled State */
+	 input[type=checkbox]:not(:checked) ~ div {
+		display: none;
+	}
+	 input[type=checkbox]:checked ~ div {
+		display: block;
+	}
+
+
+		/* Css for form 2 starts from here */
+
+	
+	.form2 > form > ul{
+		margin:25px 0 0 0;
+	}
+	.form2 > form > ul > li:nth-child(3){ 
+		display:inline-block;
+		width:45%;
+		margin:0px 0px 20px 0px;
+		margin-right: 5%;
+	}
+	.form2 > form > ul > li:nth-child(4){
+		margin:0px;
+	}
+	.form2 > form > ul > li:nth-child(5){
+		width:100%;
+		margin-right: 0;		
+	}
+	.form2 > form > ul > li:nth-child(5) > section{
+		display: flex;
+	}
+	.form2 > form > ul > li:nth-child(5) > section > article{
+		flex: 1 0 0;
+		align-content: space-between;
+		margin:20px 0px;
+	}
+	
+	
+	
+		/* Css for form 3 starts from here */
+	
+	.form3 > form > ul > li:nth-child(1){
+		width:100%;
+		margin-right: 0;		
+	}
+	.form3 > form > section{
+		display: flex;
+		flex-wrap:wrap;
+		margin-bottom: 25px;
+	}
+	.form3 > form > section > article{
+		margin: 14px 0px 10px;
+		width: 20%;
+	}
+	.form3 > form > ul{
+		margin:18px 0 0 0;
+	}
+	.form3 > form > ul > li{
+		background: #f2f4f8;
+		padding: 2%;
+		border-radius: 2px;
+		transition: transform .5s ease;
+	}
+	.form3 > form > ul > li:hover{
+		transform: scale(1.06);
+		box-shadow:0px 0px 9px #9a9af2;
+		z-index:10;
+		
+	}
+	.form3 > form > ul > li > article:nth-child(2){
+		padding: 7px 0 0 0;
+	}
+	.form3 > form > ul > li > article > input[type="checkbox"]{
+		margin-left: auto;
+	}
+	.form3 > form > ul > li, .form3 > form > ul > li:nth-child(1), .form3 > form > ul > li:nth-child(3), .form3 > form > ul > li:nth-child(4), .form3 > form > ul > li:nth-child(6), .form3 > form > ul > li:last-child{
+		display: inline-block;
+		width: 28.7%;
+		margin: 0px 0px 20px 0px;
+	}
+	.form3 > form > ul > li > article:nth-child(2){
+		display:flex;
+	}
+	
+	
+	
+	
+	.form4 > form > ul > li > section > article > input{
+		display: block;
+		width: 85%;
+		padding: 11px 12px;
+		font-size: 15px;
+		line-height: 1.6;
+		color: #999;
+		background-color: #f4f7f9;
+		background-image: none;
+		border: 1px solid transparent;
+		border-radius: 3px;
+	}
+	.form4 > form > ul > li:nth-child(2) > select{
+		width: 100%;
+	}	
+
+
+	.successmsz	> h3{
+		font-size: 50px;
+		text-transform: uppercase;
+		padding: 55px 0px 8px 0px;
+		letter-spacing:1px;
+		text-transform:uppercase;
+		text-align:center;
+	}
+		
+/* body css ends here */
+
+
+
+
+/* Footer css starts from here */
+	Footer > section > p{
+		color:#fff;
+	}
+
+	Footer{
+		background:#6736cd;
+		width:100%;
+		margin-top:60px;
+	}
+	Footer > section{
+		padding:2% 0px;
+		width: 80%;
+		margin: 0px auto;
+		text-align:center;
+	}
+	
+/* Footer css ends here */
+
+
+
+
+
+/*  Responsive css starts from here  */
+
+
+	@media screen and (min-width: 350px) and (max-width: 668px) {	
+
+		header > section, Footer > section{
+			max-width: 92%;
+		}
+		.Containerbody {
+			max-width: 90%;
+		}
+		header > section{
+			display:block;
+		}
+		
+		.Containerbody > section:nth-child(2), .formactions {
+			max-width: 90%;
+			padding: 5%;
+			width: 90%;
+		}
+		.formactions > form > ul > li:nth-child(1), .formactions > form > ul > li:nth-child(4), .togglediv > ul > li:nth-child(1), .togglediv > ul > li:nth-child(4) {
+			margin-right: 5%;
+			width: 100%;
+		}
+		.formactions > form > ul > li, .togglediv > ul > li, .formactions > form > ul > li > select, .togglediv > ul > li > select {
+			width: 100%;
+		}
+		.formactions > form > ul > li > input, .formactions > form > input, .formactions > form > ul > li > textarea, .formactions > form > ul > li > div.togglediv > input, .togglediv > ul > li > input, .togglediv > ul > li > select, .togglediv > ul > li > textarea {
+			width: 92%;
+		}
+		.form2 > form > ul > li:nth-child(3){
+			width:100%;
+		}
+		
+		.form3 > form > section > article {
+			width: 50%;
+		}
+		.form3 > form > ul > li, .form3 > form > ul > li:nth-child(1), .form3 > form > ul > li:nth-child(3), .form3 > form > ul > li:nth-child(4), .form3 > form > ul > li:nth-child(6), .form3 > form > ul > li:last-child {
+			width:auto;
+		}
+
+		/*	------------ Foter starts from here -----------  */	
+			
+		Footer > section{
+			flex-wrap:wrap;
+		}
+		.form2 > form > ul > li:nth-child(5) > section {
+			display: block;
+		}
+		 Footer > section > article{
+			width:100%;
+		}
+	}
+
+
+	@media screen and (min-width: 668px) and (max-width: 1024px) {
+	
+		
+		header > section{
+			display:flex;	
+		}
+		.Containerbody > section:nth-child(2) {
+			width:100%;	
+		}
+		.formactions {
+			width: 100%;
+			margin: 0px auto;
+			padding: 30px 0;
+		}
+		.formactions > form > ul > li:nth-child(1), .formactions > form > ul > li:nth-child(4), .togglediv > ul > li:nth-child(1), .togglediv > ul > li:nth-child(4) {
+			width: 100%;
+			margin-right:0;
+		}
+		.formactions > form > ul > li, .togglediv > ul > li, .formactions > form > ul > li > select, .togglediv > ul > li > select {
+			width: 100%;
+		}
+		.formactions > form > ul > li > input, .formactions > form > input, .formactions > form > ul > li > textarea, .formactions > form > ul > li > div.togglediv > input, .togglediv > ul > li > input, .togglediv > ul > li > textarea {
+			width: 92%;
+		}
+		.form2 > form > ul > li:nth-child(3){
+			width:100%;
+		}
+		Footer > section{
+			flex-wrap:wrap;
+		}
+		.form2 > form > ul > li:nth-child(5) > section {
+			display: flex;
+		}
+		Footer > section > article{
+			width:100%;
+		}
+	}
+	 
+	@media screen and (min-width: 668px) and (max-width: 1135px){
+		
+		.form2 > form > ul > li:nth-child(5) > section {
+			display: block;
+		}
+		
+	}

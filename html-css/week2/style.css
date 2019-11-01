@@ -1,0 +1,306 @@
+
+
+
+
+
+/*  Universal css classes  */
+
+	html, body, input, textarea, ul, li, p, h1, h2, h3, h4, h5{
+		padding:0px;
+		margin:0px;
+	}
+	ul, li{
+		list-style:none;
+	}
+	img{
+		width:100%; 
+		height:auto;
+	}
+	
+	p{	font-size: 15px;
+		font-weight: normal;
+		line-height: 20px;
+		color: #606060;
+	}
+
+
+	/*  Common css classes  */
+
+
+	body{
+		font-family:'cursive',roboto; 
+		font-weight:normal; 
+		font-size:20px;
+	}
+
+
+	h2{
+		font-size: 28px;
+		text-transform: uppercase;
+		padding: 55px 0px 8px 0px;
+		letter-spacing:1px;
+		text-transform:uppercase;
+	}
+		
+	h3{
+		font-size: 17px;
+		padding:60px 0 25px;
+		letter-spacing:0px;
+		text-transform:uppercase;
+	}
+
+
+	
+
+	/* Header css starts from here */
+	
+	header{background:#fafafa;}
+	header > section{
+		max-width: 80%;
+		margin: 0px auto;
+		padding:57px 0 60px 0;
+	}
+	header > section > h1 > a{
+		font-size:38px;
+		font-weight: 700;
+		color:#000;
+		text-decoration:none;
+		text-transform: uppercase;
+	}
+	
+
+	header > section > p{
+		font-size: 18px;
+		font-weight: 500;
+		color: #929292;
+		margin-top:10px;
+	}
+
+
+/* Menu css starts from here */
+
+
+	header > nav{
+		background:#fff;
+		border-top:1px solid #eeeeee;
+		padding:29px 0 31px 0;
+	}
+		
+	header > nav > ul{
+		display:flex;
+		max-width: 80%;
+		margin: 0px auto;
+	}
+	header > nav > ul > li{
+		font-size:15px;
+		margin-right:40px;
+	}
+	header > nav > ul > li > a:link, header > nav > ul > li > a:visited{
+		color:#3d3d3d;
+		text-decoration:none;
+		font-weight:500;
+	}
+	header > nav > ul > li > a:active, header > nav > ul > li > a:hover{
+		color:#929292;
+		text-decoration:none;
+		font-weight:500;
+	}
+
+	
+
+
+/* Header css ends here */
+
+
+
+
+
+
+/* body css starts from here */
+
+	/* Slider area starts from here */
+
+	section.slider{
+		align-content:center;
+	}
+	section.slider > img{
+		width:100%;
+		height:auto;
+	}
+	/* Slider area ends here */
+
+
+	.Containerbody{
+		max-width: 80%;
+		margin:0px auto;
+	}
+	.Containerbody > section{
+		display:flex;
+		justify-content: space-between;
+	}
+	.Containerbody > section > article:nth-child(1){
+		width:34%;
+	}
+	.Containerbody > section > article:nth-child(2){
+		width:57%;
+	}
+	.Containerbody > section > article:nth-child(1) > p{
+		font-size: 13px;
+		font-weight: normal;
+		line-height: 20px;
+	}
+		
+	.Containerbody > section > article:nth-child(2) > ul{
+		display: flex;
+		flex-flow: row wrap;
+	}
+	.Containerbody > section > article:nth-child(2) > ul > li{
+		max-width:157px;
+		padding:20px;
+	}
+	.Containerbody > section > article:nth-child(2) > ul > li > a > img{
+		transition: transform .2s; /* Animation */
+	}
+	.Containerbody > section > article:nth-child(2) > ul > li > a > img:hover{
+		transform: scale(1.5); /* 150% zoom */
+	}
+
+/* body css ends here */
+
+
+
+
+
+
+
+/* Footer css starts from here */
+	Footer > section > article p, Footer > section > article > h3{
+		color:#fff;
+		font-size:20px;
+	}
+
+	Footer{
+		background:#6736cd;
+		width:100%;
+		margin-top:60px;
+	}
+	Footer > section{
+		padding: 0px 0px 80px 0px;
+		width: 80%;
+		margin: 0px auto;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+	Footer > section > article{
+		width: 20%;
+	}
+	Footer > section > article > p, Footer > section > article > article > p{
+		padding: 0;
+		line-height: 26px;
+		font-size:20px;
+		font-weight:500;
+	}
+	Footer > section > article > ul > li{
+		border-bottom:1px solid #7249c1;
+		line-height: 59px;
+	}
+	Footer > section > article > ul > li > a{
+		font-size:17px;
+		font-weight:600;
+		text-decoration:none;
+	}
+	Footer > section > article > ul > li > a:link, Footer > section > article > ul > li > a:visited{
+		color:#fff;
+	}
+	Footer > section > article > ul > li > a:active, Footer > section > article > ul > li > a:hover{
+		color:#551a8b;
+	}
+	
+/* Footer css ends here */
+
+
+
+
+
+/*  Responsive css starts from here  */
+
+
+	@media screen and (max-width: 415px){
+		
+		
+		header > section, body > section:nth-child(3), Footer > section{
+			max-width: 82%;
+		}
+		
+		
+		header > nav > ul{
+			display: block;
+			max-width: 82%;
+		}
+		header > nav > ul > li {
+			line-height: 45px;
+		} 
+		section.Containerbody > section:nth-child(1){
+			flex-direction: column-reverse;
+		}
+		.Containerbody > section{
+			flex-flow: row wrap;
+		}
+		.Containerbody > section > article:nth-child(2) > ul{
+			justify-content: center;
+		}
+		.Containerbody > section > article:nth-child(2) > ul > li {
+			max-width: 112px;
+		}
+		.Containerbody > section > article:nth-child(1), .Containerbody > section > article:nth-child(2){
+			width:100%;
+		}
+		 Footer > section{
+			 flex-wrap:wrap;
+		}
+		 Footer > section > article{
+			 width:100%;
+		}
+	}
+		
+	@media screen and (min-width: 415px) and (max-width: 800px) {
+	 
+		
+		header > section, body > section:nth-child(3), Footer > section, header > nav > ul{
+			max-width: 82%;
+		}
+		
+		section.Containerbody > section:nth-child(1){
+			flex-direction: column-reverse;
+		}
+		.Containerbody > section{
+			flex-flow: row wrap;
+		}
+		.Containerbody > section > article:nth-child(2) > ul{
+			justify-content: center;
+		}
+		.Containerbody > section > article:nth-child(2) > ul > li {
+			max-width: 112px;
+		}
+		.Containerbody > section > article:nth-child(1), .Containerbody > section > article:nth-child(2){
+			width:100%;
+		}
+		 Footer > section{
+			 flex-wrap:wrap;
+		}
+		 Footer > section > article{
+			 width:100%;
+		}
+	}
+	
+	@media screen and (min-width: 800px) and (max-width: 1024px) {
+		
+		
+		header > section, body > section:nth-child(3), Footer > section, header > nav > ul{
+			max-width: 92%;
+		}
+		.Containerbody > section > article:nth-child(2) > ul > li {
+			max-width: 135px;
+		}
+	}

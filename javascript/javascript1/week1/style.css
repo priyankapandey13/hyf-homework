@@ -1,0 +1,60 @@
+
+
+
+
+
+/*  Universal css classes  */
+
+body, input, textarea{font-family:Roboto;font-size:14px;letter-spacing:0.06em;}
+html, body, ul, li, p{list-style:none;padding:0px;margin:0px;}
+
+
+h1, h2, h3, h4, h5, p{font-weight:normal;padding:0px;margin:0px;}
+
+
+
+/*  Common css classes  */
+
+
+
+header{
+  background-color:rgb(52, 58, 64);
+  color:rgb(255, 255, 255);
+  padding:30px ;
+  text-align:center;
+}
+
+
+/* body css starts from here */
+section{background: #f3f7ec; padding: 3% 4%;}
+#resultbox{box-shadow: 0 10px 40px
+  rgba(0,0,0,0.15);
+  padding: 5% 6%;
+  width: 60%;
+  margin: auto;
+}
+#resultbox > div{padding-bottom: 2em;
+  border-bottom: 1px solid #c3b7ff;
+  margin-bottom: 2em;
+  color: #fc7d0d;
+}
+#resultbox > div:last-child{
+  padding-bottom: 0em;
+  border-bottom: 0px;
+  margin-bottom: 0em;
+}
+
+
+/* Footer css starts from here */
+
+footer{
+  background-color:rgb(52, 58, 64);
+  color:rgb(255, 255, 255);
+  padding:30px;
+  text-align:center;
+}
+footer ul li{display:inline;margin:0 0.5em;}
+footer ul li a{border:0px none;}
+.copyright{margin:2em 0 0 0;}
+
+/* Footer css ends here */

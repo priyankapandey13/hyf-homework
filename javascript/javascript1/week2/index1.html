@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Test</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+  
+</head>
+  
+<body>
+  <header>
+    <img src="https://www.hackyourfuture.dk/static/logo-light.svg">
+  </header>
+  
+  <section>
+      <div id="resultbox">
+        <!-- Resultbox starts from here everything should be inside it -->
+
+        <!-- Event function starts from here -->
+
+  <article>
+      
+      <input placeholder="enter the value" type="text" name="days" class="inptday" >
+      <button onclick="getEventWeekday()">Get boardingcard</button>
+
+<div id="demo"></div>
+<div id="testing">fv</div>
+  </article>
+  
+
+        <!-- Event function Ends here -->
+
+
+        <article>dvd</article>
+
+        <!-- Resultbox starts from here everything should be inside it -->
+      </div>
+  </section>
+  
+  <footer>Footer goes here</footer>
+
+
+<script>
+
+
+
+function getWeekDay(date) {
+    var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];   //Created an array containing each day, starting with Sunday. 
+    var day = date.getDay();   //Used getDay() method to get the day.
+    return weekdays[day];  //Return the element that corresponds to that index.
+  }
+  
+  var date = new Date();
+  var weekDay = getWeekDay(date);
+  
+  var eventDate = new Date('November 21, 2019');
+  var eventDay = getWeekDay(eventDate);
+  
+  console.log(`Today is ${weekDay} and the event is in ${Math.round((eventDate - date) / (1000 * 60 * 60 * 24))} days. Therefore the event will be held on ${eventDay}`);
+  console.log("\n");
+
+</script>
+
+
+</body>
+ </html>

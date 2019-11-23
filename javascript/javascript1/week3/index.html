@@ -7,8 +7,9 @@
   <meta name="author" content="SitePoint">
 
   <link rel="stylesheet" href="style.css">
+  <!-- <script src="main2.js"></script> -->
   <script src="main.js"></script>
-  <!-- <script src="test.js"></script> -->
+  
   
 </head>
   
@@ -25,38 +26,12 @@
         <!-- Flight booking function starts from here -->
         <main>
             <h1>
-                Book your flight here
+              Manage your music
             </h1>
             <h2>
-                We promise not to steal all your money!
+                
             </h2>
-          <div>
-            <label for="firstname">Write your firstname</label>
-            <input autocomplete="fname" placeholder="Firstname" type="text" name="firstname" class="firstname" >
-          </div>
-          <div>
-            <label for="lastname">Write your lastname</label>
-            <input autocomplete="lname" placeholder="Lastname" type="text" name="lastname" class="lastname">
-          </div>
-          <div>
-            <input name="use-formal-name" type="checkbox" id="checkbox">
-            <label for="formal">Use formal name</label>
-          </div>
-          <button onclick="getFullname()">Get boardingcard</button>
-          <div class="boardingcard hidden">
-              <h2>
-                  Boardingcard
-              </h2>
-              <h3>
-                  Flight from Copenhagen - London
-              </h3>
-              <h4>
-                  Fullname:
-              </h4>
-              <h4 class="fullname">
-                  
-              </h4>
-            </div>
+          
         </main>
         <!-- Flight booking function Ends here -->
 
@@ -64,10 +39,23 @@
         <article>
         <!-- Event function starts from here -->
         <div>
-          <h1>Event application</h1>
-          <!-- <input type="text" class="inptdays" >
-          <button onclick="()">Get boardingcard</button> -->
-          <div id="result"></div>
+          <h2>Public playlist</h2>
+          <div>
+            <button onclick="valuetohtml()">Add songs to list</button>
+            <label for="Allsongs" id="allsongdata"></label>
+            
+          </div>
+          <div>
+            <!-- <label for="lastname">Write your lastname</label> -->
+            <input autocomplete="songnames" placeholder="Search music here" type="text" name="songname" id="songname">
+            <button onclick="getFullname()"><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png"></button>
+          </div>
+          <!-- <div>
+            <input name="use-formal-name" type="checkbox" id="checkbox">
+            <label for="formal">Use formal name</label>
+          </div> -->
+          <button onclick="valuetohtml()">Get full list</button>
+            <label for="Allsongs" id="allsongdata"></label>
         </div>
   
 
@@ -75,9 +63,24 @@
 
 
         <div>
-            <h1>Weather wear</h1>
-            <div id="result2"></div>
-        </div>
+            <h2>Private Playlist</h2>
+            <div>
+                <button onclick="valuetohtml()">Add songs to list</button>
+                <label for="Allsongs" id="allsongdata"></label>
+                
+              </div>
+              <div>
+                <!-- <label for="lastname">Write your lastname</label> -->
+                <input autocomplete="songnames" placeholder="Search music here" type="text" name="songname" id="songname">
+                <button onclick="getFullname()"><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png"></button>
+              </div>
+              <!-- <div>
+                <input name="use-formal-name" type="checkbox" id="checkbox">
+                <label for="formal">Use formal name</label>
+              </div> -->
+              <button onclick="valuetohtml()">Get full list</button>
+                <label for="Allsongs" id="allsongdata"></label>
+            </div>
 
         </article>
 
@@ -86,10 +89,10 @@
   </section>
   
   <footer>Footer goes here</footer>
-
+  
 
 <script>
- 
+
 
 </script>
 

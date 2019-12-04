@@ -1,74 +1,86 @@
 // ---------------------------------------------------------------Program 1 : Item array removal
-console.log(`+++++++++++++++++++++++++++++++++++++++++++++++++  Item array removal  +++++++++++++++++++++++++++++++++++++++++++++++++`);
+// console.log(`+++++++++++++++++++++++++++++++++++++++++++++++++  Item array removal  +++++++++++++++++++++++++++++++++++++++++++++++++`);
 
 
-const names = ['Peter', 'Ahmad', 'Yana', 'kristina', 'Rasmus', 'Samuel', 'katrine', 'Tala'];
-const nameToRemove = 'Ahmad';
+// const names = ['Peter', 'Ahmad', 'Yana', 'kristina', 'Rasmus', 'Samuel', 'katrine', 'Tala'];
+// const nameToRemove = 'Ahmad';
+// console.log(names);
+//   // do {
+//   //   delete names.nameToRemove;
+//   //   console.log(`${names} is deleted`);
+//   // } while (names == nameToRemove);
+//   names.splice(nameToRemove);
 
-  do {
-    delete names.nameToRemove;
-    console.log(`${names} is deleted`);
-  } while (names == nameToRemove);
+
+//   // name.splic
+//   console.log(names);
   
+
+//   // ------------------------------------------------------------------Program2 : When will we be there??
+// console.log(`+++++++++++++++++++++++++++++++++++++++++++++++++  When will we be there??  +++++++++++++++++++++++++++++++++++++++++++++++++`);
+
   
+// const travelInformation = {
+//   speed: 50,
+//   destinationDistance: 432,
+// };
 
-  // ------------------------------------------------------------------Program2 : When will we be there??
-console.log(`+++++++++++++++++++++++++++++++++++++++++++++++++  When will we be there??  +++++++++++++++++++++++++++++++++++++++++++++++++`);
+// function travelInfo(destinationDistance, speed){
+//   let travelTime = destinationDistance / speed;
+//   let fullhours = Math.floor(travelTime);
+//   let travelmins = Math.floor((travelTime - fullhours) * 60);
+//   // console.log(`The time should be  ${fullhours} hours and ${travelmins} Minutes`);    It can be done as below line
+//   return `The time should be  ${fullhours} hours and ${travelmins} Minutes`
+// }
 
-  
-let travelInformation = {
-  speed: 50,
-  destinationDistance: 432,
-};
-
-function travelInfo(destinationDistance, speed){
-let travelTime = destinationDistance / speed;
-let fullhours = Math.floor(travelTime);
-let travelmins = Math.floor((travelTime - fullhours) * 60);
-console.log(`The time should be  ${fullhours} hours and ${travelmins} Minutes`);
-return;
-  }
-travelInfo(432, 50)
+// console.log(travelInfo(432, 50));
 
 
-// ---------------------------------------------------------Series duration of my life
-console.log(`+++++++++++++++++++++++++++++++++++++++++++++++++  Series duration of my life  +++++++++++++++++++++++++++++++++++++++++++++++++`);
-
-const seriesDurations = [
-  {
-    title: 'Game of thrones',
-    days: 3,
-    hours: 1,
-    minutes: 0,  
-  },
-  {
-    title: 'Sopranos',
-    days: 3,
-    hours: 14,
-    minutes: 0,
-  },
-  {
-    title: 'The Wire',
-    days: 2,
-    hours: 12,
-    minutes: 0,
-  }
-]
 
 
-let totalEach = 0;
-let totalAll = 0;
-for(let i=0; i<seriesDurations.length; i++)
-{
-  totalEach = (seriesDurations[i].days)*0.00273790926 + (seriesDurations[i].hours)*0.000114079553 + (seriesDurations[i].minutes)*0.000114079553/60 ;
-  console.log(`${seriesDurations[i].title} took ${(totalEach).toFixed(3)} of my life.`);
-  totalAll = totalAll + totalEach;
-}
+// // const travelTime = notThisFunctionName(travelInformation);
+// // console.log(travelTime); // 4 hours and 42 minutes
 
-console.log(`total years spent: ${(totalAll).toFixed(3)}`);
-let percentage = (totalAll / 80)*100;  //  percentage of total years out of 80 years life
-console.log(`In total that is ${(percentage).toFixed(3)} of my life.`);
 
+
+
+// // ---------------------------------------------------------Series duration of my life
+// console.log(`+++++++++++++++++++++++++++++++++++++++++++++++++  Series duration of my life  +++++++++++++++++++++++++++++++++++++++++++++++++`);
+
+// const seriesDurations = [
+//   {
+//     title: 'Game of thrones',
+//     days: 3,
+//     hours: 1,
+//     minutes: 0,  
+//   },
+//   {
+//     title: 'Sopranos',
+//     days: 3,
+//     hours: 14,
+//     minutes: 0,
+//   },
+//   {
+//     title: 'The Wire',
+//     days: 2,
+//     hours: 12,
+//     minutes: 0,
+//   }
+// ]
+
+
+// let totalEach = 0;
+// let totalAll = 0;
+// for(let i=0; i<seriesDurations.length; i++)
+// { // I am converting everythinh into years here (Days, hours and minutes into years).
+//   totalEach = (seriesDurations[i].days)*0.00273790926 + (seriesDurations[i].hours)*0.000114079553 + (seriesDurations[i].minutes)*0.000114079553/60 ;
+//   console.log(`${seriesDurations[i].title} took ${(totalEach).toFixed(3)} of my life.`);
+//   totalAll = totalAll + totalEach;
+// }
+
+// console.log(`total years spent: ${(totalAll).toFixed(3)}`);
+// let percentage = (totalAll / 80)*100;  //  percentage of total years out of 80 years life
+// console.log(`In total that is ${(percentage).toFixed(3)} of my life.`);
 
 
 
@@ -123,7 +135,6 @@ const myPlaylist =[{
   artist: 'Instant coffee',
 },]; 
 
-
 console.log(songDatabase); // Original 
 
 
@@ -134,7 +145,8 @@ console.log(`// ---------------------------------------------------  Adding Song
 function addSongToDatabase (song)  
 {
   songDatabase.push(song);
-  console.log(songDatabase); // Why can't i print with content using ${}
+  console.log(songDatabase);
+   //console.log(`Why can't i print with content using dollar ${songDatabase}`);  //Why can't i print with content using ${}
 }
 addSongToDatabase({
   songId: 7,
@@ -217,103 +229,103 @@ addSongToMyPlaylist(' 3 nails in wood');
 console.log(`+++++++++++++++++++++++++++++++++++++++++++++++++  Smart-ease Notepad  +++++++++++++++++++++++++++++++++++++++++++++++++`);
 
 
-const notes= []; // empty arry variable
-let formattedNotes= [];
+// const notes= []; // empty arry variable
+// let formattedNotes= [];
 
- // Function
-function addNote(id, content){// has two parameter "content " and  "id"
-  notes.push({id, content}); // push an object to the notes array
-  console.log(notes);
-}
+//  // Function
+// function addNote(id, content){// has two parameter "content " and  "id"
+//   notes.push({id, content}); // push an object to the notes array
+//   console.log(notes);
+// }
 
-//object inside notes // has two keys: content and id, value of the keys should be the value of the corresponding parameters.
+// //object inside notes // has two keys: content and id, value of the keys should be the value of the corresponding parameters.
 
-function getNoteFromId(id)// Create a function with 1 parameter "id"
-{
-  for(let i= 0; i<addNote.length; i++)
-  {
-    if(id == notes[i].id)
-    {
-      let getNote = notes[i].content;
-      console.log(`The note on the ID : ${i}  is : ${getNote}`); // when calling it should return the relevent note
-    }else{
-      console.log(`You did not input a proper value`); //If no id is specified or if the id is not a number, log out an error string. Hint: Use a for loop.
-    }
-  }
-console.log(notes);  // Get all notes
-}
+// function getNoteFromId(id)// Create a function with 1 parameter "id"
+// {
+//   for(let i= 0; i<addNote.length; i++)
+//   {
+//     if(id == notes[i].id)
+//     {
+//       let getNote = notes[i].content;
+//       console.log(`The note on the ID : ${i}  is : ${getNote}`); // when calling it should return the relevent note
+//     }else{
+//       console.log(`You did not input a proper value`); //If no id is specified or if the id is not a number, log out an error string. Hint: Use a for loop.
+//     }
+//   }
+// console.log(notes);  // Get all notes
+// }
 
-function logOutNotesFormatted()
-{
-  for(let i= 0; i<addNote.length; i++)
-  {
-    formattedNotes = notes[i].content;
-    console.log(`The note with id: ${i}, has the following note text: ${formattedNotes}`);
-  }
-}
+// function logOutNotesFormatted()
+// {
+//   for(let i= 0; i<addNote.length; i++)
+//   {
+//     formattedNotes = notes[i].content;
+//     console.log(`The note with id: ${i}, has the following note text: ${formattedNotes}`);
+//   }
+// }
 
-//  I should add a reminder to notes // +++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------        Unique feature
-
-
-addNote(01,"Bring Grocery");
-addNote(02,"Do homework");
-addNote(03,"Complete assignment");
-addNote(04,"Attend classes");
-
-getNoteFromId("-1");
-
-logOutNotesFormatted();
+// //  I should add a reminder to notes // +++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------        Unique feature
 
 
+// addNote(01,"Bring Grocery");
+// addNote(02,"Do homework");
+// addNote(03,"Complete assignment");
+// addNote(04,"Attend classes");
 
+// getNoteFromId("-1");
 
-// ---------------------------------------------------------CactusIO-interactive
-console.log(`+++++++++++++++++++++++++++++++++++++++++++++++++  CactusIO-interactive  +++++++++++++++++++++++++++++++++++++++++++++++++`);
+// logOutNotesFormatted();
 
 
 
 
-const activities= []; // Variable name - that stores all activities of the day
-let phoneLimitperapp = 130;
-function addActivity(date, activity, duration) // Function with parameter "date"= string, "activity"= string and "duration"= Number
-{
-activities.push({date, activity, duration}); // pushed one object that contains all the features
-console.log(activities);
-}
+// // ---------------------------------------------------------CactusIO-interactive
+// console.log(`+++++++++++++++++++++++++++++++++++++++++++++++++  CactusIO-interactive  +++++++++++++++++++++++++++++++++++++++++++++++++`);
 
 
 
 
-function showStatus() // show my Status and return "You have added 3 activities. They amount to 78 min. of usage"
-{let activityTimeCount= 0;
-  let i=0;
-  for(i=0; i<activities.length; i++){
-
-if(i< 0){
-  console.log("Add some activities before calling showStatus"); // If activities is empty, Add some activities before calling showStatus
-}else{
-
-  activityTimeCount = activityTimeCount + activities[i].duration;
-}
-}
-console.log(`You have added ${i} activities. They amount to ${activityTimeCount} min. of usage`);
-
-let totalTime = phoneLimitperapp*i;
-console.log(`Total time limit of using smartphone for you is ${totalTime}`);
-if(totalTime<=activityTimeCount){
-console.log(`You have reached your limit, no more smartphoning for you!"`);
-}else{
-  console.log(`You have left ${totalTime-activityTimeCount} minutes out of total time`);
-}
-return;
-}
-
-// ++++++++++++++++++++++++++++++++++++++----------------------------------------------------- Extra feature//
+// const activities= []; // Variable name - that stores all activities of the day
+// let phoneLimitperapp = 130;
+// function addActivity(date, activity, duration) // Function with parameter "date"= string, "activity"= string and "duration"= Number
+// {
+// activities.push({date, activity, duration}); // pushed one object that contains all the features
+// console.log(activities);
+// }
 
 
 
-addActivity('23/7-18', 'Youtube', 30);
-addActivity('23/7-18', 'facebook', 60);
-addActivity('23/7-18', 'Netflix', 120);
 
-showStatus(activities);
+// function showStatus() // show my Status and return "You have added 3 activities. They amount to 78 min. of usage"
+// {let activityTimeCount= 0;
+//   let i=0;
+//   for(i=0; i<activities.length; i++){
+
+// if(i< 0){
+//   console.log("Add some activities before calling showStatus"); // If activities is empty, Add some activities before calling showStatus
+// }else{
+
+//   activityTimeCount = activityTimeCount + activities[i].duration;
+// }
+// }
+// console.log(`You have added ${i} activities. They amount to ${activityTimeCount} min. of usage`);
+
+// let totalTime = phoneLimitperapp*i;
+// console.log(`Total time limit of using smartphone for you is ${totalTime}`);
+// if(totalTime<=activityTimeCount){
+// console.log(`You have reached your limit, no more smartphoning for you!"`);
+// }else{
+//   console.log(`You have left ${totalTime-activityTimeCount} minutes out of total time`);
+// }
+// return;
+// }
+
+// // ++++++++++++++++++++++++++++++++++++++----------------------------------------------------- Extra feature//
+
+
+
+// addActivity('23/7-18', 'Youtube', 30);
+// addActivity('23/7-18', 'facebook', 60);
+// addActivity('23/7-18', 'Netflix', 120);
+
+// showStatus(activities);

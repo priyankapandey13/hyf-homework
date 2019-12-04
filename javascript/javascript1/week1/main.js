@@ -1,18 +1,18 @@
-
+console.log(`--------------------------------------------------------------------  Age-ify (A future age calculator))`);
 //   Age-ify (A future age calculator)
 
 const yearOfBirth = 1987;
 let yearFuture = 2019;
 let age = yearFuture - yearOfBirth;
-console.log(age)
-console.log('You will be ' + age + ' years old in ' + yearFuture);
+console.log(age);
+console.log(`You will be ${age} years old in ${yearFuture}`);
 // Extra variable to show the message on the html page
-let result1 = 'You will be ' + age + ' years old in ' + yearFuture;
+let result1 = `You will be ' + age + ' years old in ' + yearFuture`;
 
 
 
 
-
+console.log(`--------------------------------------------------------------------  Goodboy-Oldboy (A dog age calculator)`);
 // Goodboy-Oldboy (A dog age calculator)
 
 const dogYearOfBirth = 2017 ;
@@ -31,7 +31,7 @@ else{
 }
 
 
-
+console.log(`--------------------------------------------------------------------  Housey pricey (A house price estimator)`);
 // Housey pricey (A house price estimator)
 
 const width = 8;

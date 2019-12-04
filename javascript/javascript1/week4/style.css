@@ -1,6 +1,6 @@
 /*  Universal css classes  */
 
-body, input, textarea{font-family:Roboto;font-size:14px;letter-spacing:0.06em;}
+body, input, textarea, select{font-family:Roboto;font-size:14px;letter-spacing:0.06em;}
 html, body, ul, li, p{list-style:none;padding:0px;margin:0px;}
 
 
@@ -52,17 +52,17 @@ main {
   width: 100%;
 }
 
-label {
+main label {
       display: block;
       margin-bottom: 8px;
 }
-input[type="text"]{
+main input.firstname, main input.lastname, main select {
       border-color: #d2d6d9;
       display: block;
-      width: 80%;
+      width: 50%;
       font-size: 14px;
       font-weight: 400;
-      height: 60px;
+      height: 40px;
       padding: 8px;
       line-height: 1.42857143;
       color: #2e2e2e;
@@ -70,21 +70,20 @@ input[type="text"]{
       border: 1px solid #d2d6d9;
       border-radius: 5px;
       margin-bottom: 12px;
-      margin-left: 1.5%;
 }
 
-input[type="checkbox"] {
+main > input[type="checkbox"]{
       width: 15px;
       height: 15px;
       margin-bottom: 36px;
 }
 
-label {
+main label {
           display: inline-block;
       }
   
 
-button {
+main button {
       padding: 12px 24px;
       border: none;
       height: 60px;
@@ -103,18 +102,18 @@ button {
       margin-bottom: 24px;
       background: #3ecf8e;
 }
-button:hover {
+main button:hover {
           box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1),
               0 3px 6px rgba(0, 0, 0, 0.08);
           transform: translateY(-1px);
 }
 
-button:active {
+main button:active {
           transform: translateY(1px);
           box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25),
               0 3px 7px -3px rgba(0, 0, 0, 0.3);
 }
-button > img{width: 20px;}
+
   
 .boardingcard {
       background-color: #ededed;
@@ -156,14 +155,6 @@ article > div:last-child{
   border:5px solid #ded3f68f;
   flex: 1;
 }
-
-article h2{background-color:#ded3f68f;
-  padding: 20px 0;}
-
-
-
-
-  article > div > div:nth-child(4){display: flex;}
 
 /* Css for event application ends here */
 

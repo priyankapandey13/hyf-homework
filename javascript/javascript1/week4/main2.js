@@ -47,18 +47,19 @@ let weekday = new Array(7);
 // getReply("What day is it today?");
 
 
-getReply("Set a timer for 4 minutes");
+// getReply("Set a timer for 4 minutes");
 
 
 // getReply("what is 13 + 3");
 // getReply("Add Bike ride the 6/12/2019 to my calendar"); 
 // getReply("What am I doing this week?");
 
-
-
-
+let statement = [];
+let askboxval = document.getElementById("askbox");
+statement = askboxval.options[askboxval.selectedIndex].value;
+console.log(statement)
 function getReply(statement){
-    // console.log(personal.name)
+   
     let question = statement.toLowerCase();
     console.log(`Your question is : ${question}`)
     if(question.startsWith("hello my name"))

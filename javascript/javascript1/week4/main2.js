@@ -56,11 +56,11 @@ let weekday = new Array(7);
 
 let statement = [];
 let askboxval = document.getElementById("askbox");
-statement = askboxval.options[askboxval.selectedIndex].value;
-console.log(statement)
-function getReply(statement){
-   
-    let question = statement.toLowerCase();
+statement.push(askboxval.options[askboxval.selectedIndex].value);
+
+function getReply(){
+   console.log(statement)
+    let question = statement[0].toLowerCase();
     console.log(`Your question is : ${question}`)
     if(question.startsWith("hello my name"))
             {

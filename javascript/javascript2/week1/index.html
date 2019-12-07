@@ -18,24 +18,26 @@
 
 
   </header>
-  <div id="fogbg" class="fullfogbg">
+  <!-- <form action="" > -->
+  <div id="fogbg" > <!-- class="fullfogbg" -->
       <div id="displaybox">
+          <a class="close" href="#" onclick="document.getElementById('fogbg').style.display='none'">×</a>
         <div id="animalbox"></div>
-        <a class="close" href="#fogbg">×</a>
         <div id="show"></div>
+        <div id="showmsz"></div>
       </div>
     </div>
   <section>
       <div id="resultbox">
         <!-- Resultbox starts from here everything should be inside it -->
-        
+        <div class="spiritanimal"></div>
         <!-- Flight booking function starts from here -->
         <main>
             <h1>
-                Talk to us
+                Search your spirit animal
             </h1>
             <h2>
-                You can select your question from dropdown
+                Select your spirit animal by just putting your name here.
             </h2>
           <div>
             
@@ -43,26 +45,27 @@
             <button onclick="inputval()">Submit</button>
             
           </div>
-          <div class="selectoption">
-            <p>You can also select that how you wants to generate a spirit animal.</p>
-            <select>
-              <option>Hi</option>
-              <option>i</option>
-              <option>am</option>
-            </select>
+          <div class="selectoption" onchange="getOption()">
+            <p>You can also select how you wants to generate a spirit animal.</p>
+            <div>
+              <!-- <span id="optselection">Hi</span> -->
+            <select id="options">
+              <option value="" selected>Select an action</option>
+              <option value="1">Press submit button</option>
+              <option value="2">Click outside input box</option>
+            </select></div>
           </div>
           <div>
-            <input placeholder="Input spirit animal here" type="text" name="firstname" id="inputbox" >
-            <button onclick="inputAnimal()">Submit</button> 
+            <input placeholder="Input spirit animal here" type="text" name="spirit animal" id="inputbox" >
+            <button onclick="inputAnimal()" id="addanimal" >Submit</button> 
             <p id="show2"></p>
           </div>
 
-          
         </main>
-      
         <!-- Resultbox starts from here everything should be inside it -->
       </div>
-  </section>
+    </section>
+  <!-- </form> -->
   
   <footer>Footer goes here</footer>
 

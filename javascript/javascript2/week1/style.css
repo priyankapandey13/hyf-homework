@@ -25,11 +25,24 @@ header img{
 
 
 /* body css starts from here */
-section{background: #f3f7ec; padding: 3% 4%;}
+section{background: #f3f7ec; padding: 3% 4%;position: relative;}
+.spiritanimal{
+  background: url(images/spirit.png);
+  position: absolute;
+  top: 33px;
+  right: 16%;
+  width: 303px;
+  height: 526px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 !important;
+  padding: 0px !important;
+  border: 0px none !important;
+}
 #resultbox{box-shadow: 0 10px 40px
   rgba(0,0,0,0.15);
-  padding: 5% 6%;
-  width: 60%;
+  padding: 5% 5%;
+  width: 63%;
   margin: auto;
 }
 #resultbox > div{padding-bottom: 2em;
@@ -48,8 +61,7 @@ section{background: #f3f7ec; padding: 3% 4%;}
 
 
 main {
-  margin: 0 auto;
-  width: 100%;
+  width: 70%;
 }
 main >div{
   display: flex;
@@ -61,7 +73,7 @@ main label {
 input, select {
       border-color: #d2d6d9;
       display: block;
-      width: 50%;
+      width: 80%;
       font-size: 14px;
       font-weight: 400;
       height: 100%;
@@ -102,7 +114,7 @@ main button {
       cursor: pointer;
       line-height: 1.5rem;
       margin-bottom: 24px;
-      background: #3ecf8e;
+      background: #497dc8;
 }
 main button:hover {
           box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1),
@@ -138,7 +150,12 @@ main button:active {
           display: inline-block;
 }
  
-
+button.disable, button.disable:active, button.disable:hover{
+  transform:none;
+  box-shadow:0 0 0;
+  background: #d5d5d5;
+  text-shadow: none;
+}
 
 
 /* New css ends here */
@@ -150,11 +167,12 @@ main button:active {
 width: 100%;
 height: 100%;
   display: none;
+  z-index: 1;
 }
 #displaybox{
 border: 1px solid #ffffff38;
 position: absolute;
-  height: 290px;
+  height: auto; /*290px*/
   margin: 5% 30%;
 
   z-index: 10;
@@ -165,11 +183,20 @@ position: absolute;
   background:white;
 padding: 20px 10px; 
 }
+#displaybox > #showmsz {
+  background:url(images/ask.jpg) ;
+  padding: 99px 25px 63px 305px;
+  background-size: cover;
+  color:#fff;
+  font-size: 20px;
+  text-align: right;
+}
+#displaybox > #showmsz::first-line{color:#d7beb9;font-size:50px;}
 #animalbox{
   width: 100%;
 overflow: hidden;
 height: 233px;
-background-image: url(wolf.jpg);
+/* background-image: url(images/wolf.jpg); */
 background-position: center;
 background-size: cover;
 }
@@ -181,21 +208,61 @@ background-size: cover;
   right: 8px;
   color: #fff;
   text-decoration: none;
-  font-size: 20px;}
+  font-size: 20px;
+  text-shadow: 0px 0px 8px #777575;
+}
 
-
-  .fullfogbg:target {
-    visibility: hidden;
-    opacity: 0;
-    display:none
-  }
-
-/* Css for event application starts from here */
-
-/* .selectoption{
-  
+#animalbox, #show, #showmsz{display: none;}
+/* .fullfogbg:target {
+  display: none;
 } */
-.selectoption > select{}
+.selectoption{
+  display: flex;
+  border: 1px solid #fff;
+  border-bottom: 0;padding: 20px 14px 0px 22px;
+  background:#ecedf6;
+  position: relative;
+  }
+.selectoption > select{
+  padding: 8px 8px;
+  width: 18%;
+  margin-left:auto;
+}
+/* .selectoption > div::before{
+  content: '';
+width: 36px;
+height: 44px;
+background:#497dc8;
+position: absolute;
+top: 20px;
+display: block;
+right: 13px;border-radius: 0 5px 5px 0;
+} */
+/* Css for event application starts from here */
+.selectoption > div > select{
+  height: 43px;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  float: right;
+  /* opacity: 0; */
+}
+.selectoption > div{
+  /* border: 1px solid burlywood; */
+    background:#fff;
+    border-radius: 5px;
+    margin-left: auto;
+    width: 104px;
+  }
+.selectoption > p{
+margin-top: 10px;
+}
+main > div:last-child{border: 1px solid #fff;
+   border-top: 0; 
+   padding: 15px 0px 0px 20px;
+   background:#ecedf6;
+}
+
 
 article{
   display: flex;
@@ -217,8 +284,12 @@ article > div:last-child{
 footer{
   background-color:rgb(52, 58, 64);
   color:rgb(255, 255, 255);
-  padding:10px;
-  text-align:center;
+  padding: 22px 0px;
+  margin: auto;
+  text-align: center;
+  /* position: fixed; */
+  /* bottom: 0px; */
+  /* width: 100%; */
 }
 
 

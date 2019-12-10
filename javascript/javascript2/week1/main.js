@@ -1,31 +1,62 @@
 // ------------------------------------------------------------------------ Find the shortest word
 
 
-const danishWords = ['bil', 'plante', 'kaffe', 'bog', 'ø', 'planetarium'];
+const danishWords = ['bil', 'plante', 'kaffe', 'bog',  'planetarium']; // I modified the array and removed 'ø' to see if we have multiple small words 
 
+// console.log(`The given string is : ${danishWords}`)
 
-// getshortest (); // returns 'ø'
+getshortest (); // returns the function
 
 function getshortest (){ // This function will get the shortest word in the given array
     let x;
     let numstring = []
-    let result;
+    let result=[]
     let lowestno;
+
 for(let i=0; i<danishWords.length;i++) 
 {
-    x = danishWords[i].split("").length;  // splitting each word from the danishWord array and storing it in x
-    numstring.push(x);      
-    numstring.sort()        
+    x = danishWords[i].length;  // splitting each word from the danishWord array and storing it in x
+    numstring.push(x);          
+}
+for(let j=0;j<numstring.length;j++){
+
+    numstring.sort(function(a, b){ // to sort and compare for numbers
+        return a - b;
+    })        
     lowestno = numstring[0]     // After sorting the numstring the first number will always be the shortest so that become the lowestno.
-    if(danishWords[i].length === lowestno)  // The lowest no is equals to the length of the lowest no in the danishword array so i got the lowest word here
+    if(danishWords[j].length === lowestno)  // The lowest no is equals to the length of the lowest no in the danishword array so i got the lowest word here
     {
-        result = danishWords[i]
+        result = danishWords[j];
     }
+    // console.log(`The smallest word in the Danishword array is ${result}`)
 }
 
-console.log(danishWords)
-console.log(`The smallest word in the Danishword array is ${result}`)
+
+// console.log(danishWords)
+
 }
+
+
+// ------------------------------------------------------------------------ Find the shortest word(with foreach and arrow)
+
+
+let wordlength = [];
+let shortestno;
+let shortword=[]
+
+danishWords.forEach(getlength = (value) => wordlength.push(value.length)); // pushing length of array into a new array 
+    wordlength.sort(function(a, b){return a - b;}) // sorting for numbers 
+    shortestno = wordlength[0];
+
+
+
+danishWords.forEach(getshortname = (item) => (
+    (item.length===shortestno) ? shortword += item : `Something's wrong`), //comparing if length of a word is equal to the shortest no then its the shortest word
+    // console.log(`The smallest word in the Danishword array is ${shortword}`) // how to insert console.log to find two different values as in line 34
+);
+
+
+// console.log(`The smallest word in the Danishword array is ${shortword}`)
 
 
 // ------------------------------------------------------------------------ Difference between median and average
@@ -34,17 +65,39 @@ console.log(`The smallest word in the Danishword array is ${result}`)
 
 const housePrices = [3000000, 3500000, 1300000, 40000000, 100000000, 8000000, 2100000];
 
-// getaverage()
 
-function getaverage()
-{
-    let x = []
-    x = housePrices.sort(); 
-    let result = housePrices[0];
-    // sort gives the same list in ascending orderand the first one will be 
-    // the average no because its the least no preasent in each number
-    console.log(result)
-}
+
+
+console.log(`-------------------------------------------------------- For average`)
+let sum=0;
+let average;
+
+
+housePrices.forEach(getaverage=(item)=> (
+    sum =sum+item, average=sum/housePrices.length)
+    );
+    console.log(`Average is : ${average}`)
+
+console.log(`--------------------------------------------------------for median`)
+
+let number;
+let median;
+
+housePrices.sort(function(a, b){return a - b;}) // sorting for numbers 
+
+    if(housePrices.length%2 !== 0)
+    {
+        number = Math.floor(housePrices.length/2); //  if even then the number in the center is the median if array is in ascending order.
+        median = housePrices[number];
+        // console.log(`Median is : ${median}`)
+    }else if(housePrices.length%2 === 0)
+    {   
+        number = housePrices.length/2;
+        median= (housePrices[number]+housePrices[number+1])/2; //  And if its odd then the average of the number in the center and next to center is the median(array is in ascending order.)
+       
+    }
+    console.log(`Median is : ${median}`)
+
 
 
 

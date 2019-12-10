@@ -83,6 +83,9 @@ console.log(`--------------------------------------------------------for median`
 let number;
 let median;
 
+getMedian();
+
+function getMedian(){
 housePrices.sort(function(a, b){return a - b;}) // sorting for numbers 
 
     if(housePrices.length%2 !== 0)
@@ -97,7 +100,7 @@ housePrices.sort(function(a, b){return a - b;}) // sorting for numbers
        
     }
     console.log(`Median is : ${median}`)
-
+}
 
 
 

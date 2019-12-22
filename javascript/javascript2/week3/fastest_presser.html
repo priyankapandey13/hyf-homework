@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" href="style_fast.css">
+
+  
+  
+</head>
+  
+<body>
+
+
+    
+   
+    
+  <form action="javascript:mainfunc()" method="">
+  <div id="mszDisplayBox" class="overlay">
+    <div id="mszContainer">
+        <a class="close" href="" onclick="document.getElementById('mszDisplayBox').style.display='none'">×</a>  
+      <div id="mszBody"></div>
+    </div>
+  </div>
+    <canvas id="my-canvas"></canvas> <!-- For confetti -->
+    <header>
+      <img src="https://www.hackyourfuture.dk/static/logo-light.svg">
+    </header>
+    
+  <section>
+      <div id="resultbox">
+        <div id="timer"></div>
+        <h1>Fastest Presser</h1>
+        <input placeholder="Set seconds" type="text" id="timebox" value="">
+          <button onclick="mainfunc()">Start game!</button>  <button onclick="location.reload()">Reset your game!</button>
+          
+        <main>
+          
+          
+          
+
+    <section class="sContainer">
+        <!-- <section></section> -->
+      <div>Press S</div>
+      <p>s</p>
+    </section>
+
+
+
+    <section class="lContainer">
+        
+        <div>Press L</div>
+        <p>l</p>
+    </section>
+
+        </main>
+       
+      </div>
+  </section>
+  
+   <footer>
+    Footer goes here</footer>
+  
+  </form>
+<!-- Confetti starts -->
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>
+  <!-- <script src="confetti1/site.js"></script> -->
+
+<!-- Confetti ends here -->
+
+<script src="fastest_presser.js?n=1"></script>
+</body>
+ </html>

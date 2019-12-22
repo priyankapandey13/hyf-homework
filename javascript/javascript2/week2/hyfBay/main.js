@@ -7,7 +7,7 @@ console.log(availProducts)
 
 // renderProducts(availProducts); // Should add 3 li's to the ul under the products section with Flat screen, Mobile phone, Wallet text
 
-function renderProducts(searchValue, sortValue, countryValue, priceValue){ //product
+function renderProducts(product){ //searchValue, sortValue, countryValue, priceValue
     const ulname = document.querySelector("section.products > ul");
 
     // for(let i=0; i<availProducts.length;i++)
@@ -20,8 +20,8 @@ function renderProducts(searchValue, sortValue, countryValue, priceValue){ //pro
         liname.appendChild(ulname1);
         ulname1.appendChild(liname1);
 
-        // liname1.textContent = `${product.name}   |   ${product.price}   |   ${product.rating}   |   ${product.shipsTo} `;
-        liname1.textContent = `${searchValue.value}   |   ${sortValue.value}   |   ${countryValue.value}   |   ${priceValue.value} `;
+        liname1.textContent = `${product.name}   |   ${product.price}   |   ${product.rating}   |   ${product.shipsTo} `;
+        // liname1.textContent = `${searchValue.value}   |   ${sortValue.value}   |   ${countryValue.value}   |   ${priceValue.value} `;
     // }
 }
 
@@ -118,7 +118,7 @@ sorting.addEventListener('change', () => searchProducts());
 pricingOption.addEventListener('change', () => searchProducts());
 
 
-renderProducts(searchbox, shippingCountry, sorting, pricingOption);
+// renderProducts(searchbox, shippingCountry, sorting, pricingOption);
 
 
 

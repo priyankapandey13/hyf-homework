@@ -1,0 +1,35 @@
+1:Create a database "Todo"
+
+use todo
+
+2:Insert the exported data into the related collections
+mongoimport --jsonArray --db todo --collection status --file "D:\hyf-homework\databases\week3\status.json"
+mongoimport --jsonArray --db todo --collection task --file "D:\hyf-homework\databases\week3\task.json"
+mongoimport --jsonArray --db todo --collection user --file "D:\hyf-homework\databases\week3\user.json"
+
+3:Find the length of each collection using db."collection_name".find().length()
+
+db.status.find().length() returned: 6
+db.task.find().length() returned: 35
+db.user.find().length() returned: 12
+
+4:Return the first document of tasks collection using .limit()
+
+db.status.find().limit(2)
+returned :
+{ "_id" : ObjectId("5e48961cb5d10cf7734b6a97"), "id" : 2, "name" : "In progress" }
+{ "_id" : ObjectId("5e48961cb5d10cf7734b6a98"), "id" : 1, "name" : "Not started" }
+
+
+5:Return the third document of the task collection using .skip() and .limit()
+
+ db.status.find().skip(1).limit(2) 
+returned:
+{ "_id" : ObjectId("5e48961cb5d10cf7734b6a98"), "id" : 1, "name" : "Not started" }
+{ "_id" : ObjectId("5e48961cb5d10cf7734b6a99"), "id" : 3, "name" : "Done" }
+
+
+6:Find the documents which "description" is "learning Danish during physical working" using .find({condition})
+
+db.task.find( { description: "learning Danish during physical working" } )
+(Doesn't return anything)

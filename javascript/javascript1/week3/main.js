@@ -4,16 +4,9 @@
 
 // const names = ['Peter', 'Ahmad', 'Yana', 'kristina', 'Rasmus', 'Samuel', 'katrine', 'Tala'];
 // const nameToRemove = 'Ahmad';
-// console.log(names);
-//   // do {
-//   //   delete names.nameToRemove;
-//   //   console.log(`${names} is deleted`);
-//   // } while (names == nameToRemove);
-//   names.splice(nameToRemove);
 
-
-//   // name.splic
-//   console.log(names);
+// const newarray = names.filter(item=>item !== nameToRemove)
+// console.log(newarray);
   
 
 //   // ------------------------------------------------------------------Program2 : When will we be there??
@@ -73,6 +66,9 @@
 // let totalAll = 0;
 // for(let i=0; i<seriesDurations.length; i++)
 // { // I am converting everythinh into years here (Days, hours and minutes into years).
+//   //for days to years: (seriesDurations[i].days)*0.00273790926;
+//   //for hours to years: (seriesDurations[i].hours)*0.000114079553
+//   //for minutes to years : (seriesDurations[i].minutes)*0.000114079553/60
 //   totalEach = (seriesDurations[i].days)*0.00273790926 + (seriesDurations[i].hours)*0.000114079553 + (seriesDurations[i].minutes)*0.000114079553/60 ;
 //   console.log(`${seriesDurations[i].title} took ${(totalEach).toFixed(3)} of my life.`);
 //   totalAll = totalAll + totalEach;
@@ -112,121 +108,110 @@ const songDatabase = [{
 },
 {
   songId: 5,
-  title: 'When is enough too little',
+  title: 'Too good to go',
   artist: 'kitty girls',
 },
 {
   songId: 6,
-  title: 'When is enough too little',
+  title: 'When its too rough',
   artist: 'Vanom',
 },
 ];
 
 
-//----------------- SOme global array's
-const songIdIndexArray=[];  //      It gives the array of the Id of the songs which are duplicated 
 
+// updated code starts from here
 
-const searchResult =[];
-const mysongindex =[];
-const myPlaylist =[{
-  songId: 3,
-  title: 'Blacker than black',
-  artist: 'Instant coffee',
-},]; 
+const updatedpubliclist = songDatabase;
+const privateplaylist=[];
 
-console.log(songDatabase); // Original 
-
-
-
-
-console.log(`// ---------------------------------------------------  Adding Song`);
-
-function addSongToDatabase (song)  
-{
-  songDatabase.push(song);
-  console.log(songDatabase);
-   //console.log(`Why can't i print with content using dollar ${songDatabase}`);  //Why can't i print with content using ${}
+function getPublicList(){
+  console.log("Hi im here");
+  let allpublicsongs = songDatabase.map(item=> "</br>" + item.title )
+  document.getElementById("allpublicsongs").innerHTML = allpublicsongs;
 }
-addSongToDatabase({
-  songId: 7,
-  title: 'Dummy content 01',
-  artist: 'Dummy artist 01'
-});
+let searchedsong;
 
-// ------------------------------------------------------------------------------------------------------------------------getSongByTitle
-console.log(`// ---------------------------------------------------  Searching song  ( When is enough too little ) by title`);
-function getSongByTitle(songname){
-      let j=0;
-      searchResult[0]=-1;
+function searchSongName(){
+  const songname = document.getElementById("searchmusic").value;
+  const songlowercasename = songname.toLowerCase();
+  searchedsong = songDatabase.filter(item=> ((item.title).toLowerCase()).includes(songlowercasename))
+  return searchedsong;  
+}
 
-  for(let i=0; i<songDatabase.length;i++)
-  {
-    if(songDatabase[i].title == songname)
-    {
-    let songIdIndex = songDatabase[i].songId; 
-    searchResult[j] = songIdIndex;
-    j++;
-    songIdIndexArray.push(songIdIndex);  // Pushing the value of the duplicating song index here
-    if(j<1){
-      console.log("This can not be true");
-    }else{
-      console.log(` Song you are searching for is : ${songname}`);
-    }
+function assemblesearch() {
+  searchSongName();
+  const songstring = searchedsong.map(item=>`</br> ${item.title}, By : ${item.artist}
+  <a href='#' onclick='addtoPrivateLib()' alt='Add to personal playlist'> <img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_playlist_add_48px-512.png' alt='Add'/></a>`)
+  document.getElementById("searchedSongslist").innerHTML = songstring;
+  return songstring;
+}
+
+
+
+function addNewSongName() {
+  const newsongname = document.getElementById("newsongname").value;
+  const newsongartist = document.getElementById("newsongartist").value;
+  let count = songDatabase.length;
+
+  updatedpubliclist.push({songId: count+1,
+    title: newsongname,
+    artist: newsongartist,})
+
+  const newsong =`Your song "${newsongname}" is successfully saved to playlist <img src='https://cdn0.iconfinder.com/data/icons/google-material-design-3-0/48/ic_playlist_add_check_48px-512.png'  alt='Success'>`;
+  document.getElementById("savedSong").innerHTML=newsong;
+}
+
+
+function getUpdatedPubliclist(event){
+  let allupdatedpublicsongs = updatedpubliclist.map(item=> "</br>" + item.title)
+  document.getElementById("allpublicsongs").innerHTML = allupdatedpublicsongs;
+}
+
+
+function getPrivateList(){
+  let allPrivatesongs = privateplaylist.map(item=> `</br>${item.title}`)
+  console.log(allPrivatesongs);
+  if(allPrivatesongs.length === 0) {
+    document.getElementById("privatelist").innerHTML="There are no songs to show here, add some new."; 
+  }else{
+    document.getElementById("privatelist").innerHTML = ` ${allPrivatesongs}`;
   }
-}
-//    It should return the song that match the title parameter.
-return searchResult;
+   
 }
 
+function addtoPrivateLib() {
+  searchSongName();
+  const searchOnlyObjects = searchedsong.map(item=> privateplaylist.push(item))
+  document.getElementById("addedSuccess").innerHTML=`Successfully added into your personal playlist </br>
+     You can search songs below`;
+}
 
+function getPrivateSearch(){
+  const songname = document.getElementById("searchPrivatemusic").value;
+  const songlowercasename = songname.toLowerCase();
+  searchedsong = privateplaylist.filter(item=> ((item.title).toLowerCase()).includes(songlowercasename))
+  const songstring = searchedsong.map(item=>`</br> ${item.title}, By : ${item.artist}
+  <a href='#' onclick='deletefromPrivateLib()' alt='Delete from personal playlist'> <img src='https://banner2.cleanpng.com/20180329/dyq/kisspng-computer-icons-icon-design-delete-button-5abcecfee7b8e6.5542925815223308789491.jpg' alt='Add'/></a>`)
+  document.getElementById("searchedPrivateSongslist").innerHTML = songstring;
 
+}
 
-// ------------------------------------------------------------------------------------------------------------------------addSongToMyPlaylist
-
-function addSongToMyPlaylist (selectedsong){  
+function deletefromPrivateLib(){
   
-  for(i=0; i<myPlaylist.length; i++)
-  {
-  if(selectedsong == myPlaylist[i].title)
-{
-  console.log(`To avoid duplicacy it cannot be inserted, already stored`);
-}else{
-  const mysongindex = getSongByTitle(selectedsong);
-  console.log(`But First the argument of getSongByTitle on line 220 should be commented, it should be blank before passing the new argument.`);
-  console.log(mysongindex);
-  addSong(mysongindex);
-  return;
-}
-}
+  const todeletesong = document.getElementById("searchPrivatemusic").value;
+  const deletetrack = privateplaylist.filter(item=> !(item.title).includes(todeletesong) )
+
+  document.getElementById("privatelist").innerHTML= '';
+  document.getElementById("privatelist").innerHTML= deletetrack.map(item=> `</br> ${item.title}`);
+  document.getElementById("searchedPrivateSongslist").innerHTML=``;
 }
 
-
-// ------------------------------------------------------------------------------------------------------------------------add Song to myplaylist
-function addSong(songindexinfo)
-{
-  myPlaylist.push(songDatabase[songindexinfo-1]);
-  console.log(myPlaylist);
-  console.log(`-----------------------------------------------------------------------------------------------`);
-}
-
-
-// ---------------------------------------------------------Improving our application optional
-getSongByTitle("When is enough too little");
-console.log(searchResult);
-
-console.log(`// ---------------------------------------------------  Add Song To MyPlaylist by title`);
-addSongToMyPlaylist(' 3 nails in wood');
-
-
-
-
-
-
+// code ends here //
 
 
 // ---------------------------------------------------------Smart-ease Notepad
-console.log(`+++++++++++++++++++++++++++++++++++++++++++++++++  Smart-ease Notepad  +++++++++++++++++++++++++++++++++++++++++++++++++`);
+// console.log(`+++++++++++++++++++++++++++++++++++++++++++++++++  Smart-ease Notepad  +++++++++++++++++++++++++++++++++++++++++++++++++`);
 
 
 // const notes= []; // empty arry variable

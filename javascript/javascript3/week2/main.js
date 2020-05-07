@@ -5,7 +5,7 @@ let allbad2000 = [];
 let allbadtitle2000 = [];
 
 function getmovielist(data) {
-  // sessionStorage.clear();
+  sessionStorage.clear();
   let selectedvalue = document.getElementById("movlist").value;
   // created an inputbox and a button for searching the gif file
 
@@ -16,15 +16,15 @@ function getmovielist(data) {
 
   } else if (selectedvalue == "allbad") {
 
-    console.log(selectedvalue);
-    data.forEach(element => {
-
+    console.log(`This is the selected value: ${selectedvalue}`);
+    
+      data.filter(element => {
       if (element.rating < 5) {
         allbadmov.push(element);
-      
       }
+      
     });
-
+    document.getElementById("totalmovies").innerHTML = `Total no of movies shown : ${allbadmov.length}`;
     document.getElementById("movselected").innerHTML = `you have selected option no 1`;
     document.getElementById("movresult").innerHTML = showtabulardata(allbadmov);
 
@@ -32,18 +32,12 @@ function getmovielist(data) {
     // Created an array of bad movies since year 2000
     console.log(selectedvalue);
 
-    data.forEach(element => {
-
-      if (element.rating < 5 && element.year < 2000) {
-
-        for (let i = 0; i < element.length; i++) {
-        
-          const element = array[i];
-        }
-
-        allbad2000.push(element);
-      }
-    });
+    data.map(element=>{
+      (element.rating < 5 && element.year < 2000) ? (allbad2000.push(element)) : false ;
+    })
+    // console.log(`Total no of bad movies since year 2000: ${allbad2000.length}`);
+    
+    document.getElementById("totalmovies").innerHTML = `Total no of movies shown : ${allbad2000.length}`;
     document.getElementById("movselected").innerHTML = `you have selected option no 2`; 
     document.getElementById("movresult").innerHTML = showtabulardata(allbad2000);
 
@@ -52,13 +46,12 @@ function getmovielist(data) {
 
     // Created an array of bad movies since year 2000
     console.log(selectedvalue);
-    data.forEach(element => {
 
-      if (element.rating < 5 && element.year < 2000) {
+    data.filter(element=>{
+      (element.rating < 5 && element.year < 2000) ? (allbadtitle2000.push(element.title)) : false;
+    })
 
-        allbadtitle2000.push(element.title);
-      }
-    });
+    document.getElementById("totalmovies").innerHTML = `Total no of movies shown : ${allbadtitle2000.length}`;
     document.getElementById("movselected").innerHTML = `you have selected option no 3`;
     document.getElementById("movresult").innerHTML = showlisting(allbadtitle2000);
   }

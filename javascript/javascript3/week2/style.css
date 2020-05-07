@@ -143,7 +143,10 @@ button:active {
   max-height: 300px;
   overflow-y: scroll;
 }
-
+#totalmovies{
+  float: right;
+  margin: 0px;
+  padding: 0px;}
 
 /* New css ends here */
 

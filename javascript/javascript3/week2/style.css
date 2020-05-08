@@ -1,6 +1,4 @@
-/*  Universal css classes  */
-
-body, input, textarea{font-family:Roboto;font-size:14px;letter-spacing:0.06em;}
+body, input, textarea, select{font-family:Roboto;font-size:14px;letter-spacing:0.06em;}
 html, body, ul, li, p{list-style:none;padding:0px;margin:0px;}
 
 
@@ -15,12 +13,12 @@ h2{font-size:20px;margin-bottom: 40px;}
 
 
 header{
-  background-color:rgb(52, 58, 64);
+  background-color:rgb(23, 23, 24);
   color:rgb(255, 255, 255);
   padding:10px 30px ;
 }
 header img{
-  width: 120px;
+  width: 170px;
 }
 
 
@@ -33,14 +31,15 @@ section{background: #f3f7ec; padding: 3% 4%;}
   margin: auto;
 }
 #resultbox > div{padding-bottom: 2em;
-  border-bottom: 1px solid #c3b7ff;
+  /* border-bottom: 1px solid #c3b7ff; */
   margin-bottom: 2em;
-  color: #fc7d0d;
 }
 #resultbox > div:last-child{
   padding-bottom: 0em;
   border-bottom: 0px;
   margin-bottom: 0em;
+  max-height: 210px;
+  overflow-y: scroll;
 }
 
 
@@ -52,17 +51,17 @@ main {
   width: 100%;
 }
 
-label {
+main label {
       display: block;
       margin-bottom: 8px;
 }
-input[type="text"]{
+input.firstname, input.lastname, select {
       border-color: #d2d6d9;
-      display: inline;
-      width: 80%;
+      display: block;
+      width: 50%;
       font-size: 14px;
       font-weight: 400;
-      height: 60px;
+      height: 40px;
       padding: 8px;
       line-height: 1.42857143;
       color: #2e2e2e;
@@ -70,16 +69,17 @@ input[type="text"]{
       border: 1px solid #d2d6d9;
       border-radius: 5px;
       margin-bottom: 12px;
-      margin-left: 1.5%;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"]{
       width: 15px;
       height: 15px;
       margin-bottom: 36px;
 }
 
-
+label {
+          display: inline-block;
+      }
   
 
 button {
@@ -112,7 +112,7 @@ button:active {
           box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25),
               0 3px 7px -3px rgba(0, 0, 0, 0.3);
 }
-button > img{width: 20px;}
+
   
 .boardingcard {
       background-color: #ededed;
@@ -135,67 +135,28 @@ button > img{width: 20px;}
           display: inline-block;
 }
  
-
-
+#movselected{
+  padding: 15px 13px 0px 13px;
+  margin: -12px;
+}
+#movresult{
+  max-height: 300px;
+  overflow-y: scroll;
+}
+#totalmovies{
+  float: right;
+  margin: 0px;
+  padding: 0px;}
 
 /* New css ends here */
 
 /* Css for event application starts from here */
-
-article{
-  display: flex;
-  flex-wrap: wrap;text-align: center;
+#map{
+  width: 100%;height: 500px;
 }
-article > div:first-child{
-  border:5px solid #ded3f68f;
-  flex: 1;margin-right: 2%;
-}
-article > div:last-child{
-  border:5px solid #ded3f68f;
-  flex: 1;
-}
-
-article h2{background-color:#ded3f68f;
-  padding: 20px 0;}
-
-
-
-  article > div > div{width:100%;padding: 10px 0px;}
-
-article > div > div:nth-child(4) > span, article > div > div:nth-child(3) > span{flex: 1;}
-article > div > div:nth-child(4) > input{
-  width: 39%;
-  display: inline;
-}
-
-#searchedSongslist, #searchedPrivateSongslist {
-width: 100%;line-height: 27px;
-}
-
-
-#searchedSongslist > a > img, #searchedPrivateSongslist > a > img, #savedSong > img{
-  width: 20px;
-  height: 20px;
-  position: relative;
-  top: 5px;
-  margin-left: 8px;
-}
-
-#searchedSongslist > a, #searchedSongslist > a, #savedSong > img{
-  position: relative;
-}
-#searchedSongslist > a:hover::after,
-#searchedSongslist > a:hover::after{
-  content: attr(alt);
-  display: block;
-  position: absolute;
-  padding: 11px 13px;
-  background-color: #000000ad;
-  bottom: 16px;
-  border-radius: 4px;
-  color: #fff;
-  right: 0px;
-}
+/* #map > div{display: none;} */
+#map > div:nth-child(0), #map > div:nth-child(1){display: block;}
+#map > div:nth-child(4), #map > div:nth-child(2), #map > div:nth-child(3){display: none;}
 /* Css for event application ends here */
 
 /* Footer css starts from here */
@@ -207,5 +168,3 @@ footer{
   text-align:center;
 }
 
-
-/* Footer css ends here */

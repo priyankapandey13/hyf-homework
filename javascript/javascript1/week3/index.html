@@ -3,7 +3,6 @@
   <meta charset="utf-8">
 
   <title>Test</title>
-  <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
 
   <link rel="stylesheet" href="style.css">
@@ -20,10 +19,7 @@
   
   <section>
       <div id="resultbox">
-        <!-- Resultbox starts from here everything should be inside it -->
-
-
-        <!-- Flight booking function starts from here -->
+       
         <main>
             <h1>
               Manage your music
@@ -33,33 +29,37 @@
             </h2>
           
         </main>
-        <!-- Flight booking function Ends here -->
-
+       
 
         <article>
         <!-- Event function starts from here -->
         <div>
           <h2>Public playlist</h2>
           <div>
-            <button onclick="valuetohtml()">Get full list</button>
-            <label for="Allsongs" id="allsongdata"></label>
+            <button onclick="getPublicList()">Get full list</button>
+            <!-- <label for="Allsongs" id="allsongdata">hi</label> -->
           </div>
           <div>
-            <button onclick="valuetohtml()">Add songs to list</button>
-            <label for="Allsongs" id="allsongdata"></label>
+            <input autocomplete="songnames" placeholder="Search music here" type="text" name="songname" id="searchmusic">
+            <button onclick="assemblesearch()"><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png"></button>
+            <span id="searchedSongslist">
+
+            </span>
             
           </div>
           <div>
             <!-- <label for="lastname">Write your lastname</label> -->
-            <input autocomplete="songnames" placeholder="Search music here" type="text" name="songname" id="songname">
-            <button onclick="getFullname()"><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png"></button>
+            <input autocomplete="songnames" placeholder="Add songs here" type="text" name="songname" id="newsongname">
+            <input autocomplete="songnames" placeholder="Add songs here" type="text" name="songname" id="newsongartist">
+            <button onclick="addNewSongName()"><img src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/add-512.png"></button>
+            <span id="savedSong"></span>
           </div>
           <!-- <div>
             <input name="use-formal-name" type="checkbox" id="checkbox">
             <label for="formal">Use formal name</label>
           </div> -->
-          <button onclick="valuetohtml()">Get full list</button>
-            <label for="Allsongs" id="allsongdata"></label>
+          <button onclick="getUpdatedPubliclist()">Get Updated list</button>
+            <label for="Allsongs" id="allpublicsongs"></label>
         </div>
   
 
@@ -69,30 +69,26 @@
         <div>
             <h2>Private Playlist</h2>
             <div>
-                <button onclick="getlist()">Get full list</button>
-                <label for="Allsongs" id="allsongdata"></label>
+                <button onclick="getPrivateList()">Get full list here</button>
+                <!-- <label for="Allsongs" id="allsongdata"></label> -->
             </div>
             <div>
-                <button onclick="valuetohtml()">Add songs to list</button>
-                <label for="Allsongs" id="allsongdata"></label>
+                <!-- <button onclick="valuetohtml()">Add songs to list</button> -->
+                <label for="Allsongs" id="addedSuccess"></label>
                 
               </div>
               <div>
-                <!-- <label for="lastname">Write your lastname</label> -->
-                <input autocomplete="songnames" placeholder="Search music here" type="text" name="songname" id="songname">
-                <button onclick="getFullname()"><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png"></button>
+                <input autocomplete="songnames" placeholder="Search music here" type="text" name="songname" id="searchPrivatemusic">
+                <button onclick="getPrivateSearch()"><img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png"></button>
+                <span id="searchedPrivateSongslist">
               </div>
-              <!-- <div>
-                <input name="use-formal-name" type="checkbox" id="checkbox">
-                <label for="formal">Use formal name</label>
-              </div> -->
-              <button onclick="valuetohtml()">Get full list</button>
-                <label for="Allsongs" id="allsongdata"></label>
+              
+                <label for="Allsongs" id="privatelist"></label>
             </div>
 
         </article>
 
-        <!-- Resultbox starts from here everything should be inside it -->
+      
       </div>
   </section>
   

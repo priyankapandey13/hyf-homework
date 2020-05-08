@@ -1,16 +1,11 @@
 body, input, textarea, select{font-family:Roboto;font-size:14px;letter-spacing:0.06em;}
 html, body, ul, li, p{list-style:none;padding:0px;margin:0px;}
 
-
 h1, h2, h3, h4, h5, p{font-weight:normal;padding:0px;margin:0px;}
 h1{font-size:40px;text-transform: uppercase;font-weight: bold;}
 h2{font-size:20px;margin-bottom: 40px;}
 
-
-
 /*  Common css classes  */
-
-
 
 header{
   background-color:rgb(23, 23, 24);
@@ -20,7 +15,6 @@ header{
 header img{
   width: 170px;
 }
-
 
 /* body css starts from here */
 section{background: #f3f7ec; padding: 3% 4%;}
@@ -42,9 +36,7 @@ section{background: #f3f7ec; padding: 3% 4%;}
   overflow-y: scroll;
 }
 
-
 /* New css starts from here */
-
 
 main {
   margin: 0 auto;
@@ -81,7 +73,6 @@ label {
           display: inline-block;
       }
   
-
 button {
       padding: 12px 24px;
       border: none;
@@ -112,8 +103,6 @@ button:active {
           box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25),
               0 3px 7px -3px rgba(0, 0, 0, 0.3);
 }
-
-  
 .boardingcard {
       background-color: #ededed;
       padding: 24px;
@@ -167,4 +156,3 @@ footer{
   padding:10px;
   text-align:center;
 }
-

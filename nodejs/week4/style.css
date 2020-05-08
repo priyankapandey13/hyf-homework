@@ -1,0 +1,101 @@
+body{
+  background-color:#f8f8f6;
+  /* background-image:url("email.jpg"); */
+  /* background-size: cover; */
+}
+
+body, input, textarea, select{font-family:Roboto;font-size:14px;letter-spacing:0.06em;color: #969797;}
+html, body, ul, li, p{list-style:none;padding:0px;margin:0px;}
+
+
+h1, h2, h3, h4, h5, p{font-weight:normal;padding:0px;margin:0px;}
+h1{font-size:40px;text-transform: uppercase;font-weight: bold;}
+h2{font-size:20px;margin-bottom: 40px;}
+
+
+
+/*  Common css classes  */
+
+
+.mailcontainer{
+  width: 63%;
+  margin: 0px auto;
+  border: 2px solid #1a447c;
+  margin-top: 76px;
+}
+
+.mailcontainer .head{
+  background-color: #1a447c;
+  padding: 2% 2%;
+  color: #fff;
+  width: 96%;
+  display: block;
+}
+.subject{
+  display: flex;
+  border-bottom: 1px solid #c8c8c8;
+}
+.subject lable{
+  display: flex;
+  flex-grow: 1;
+  font-size: 18px;
+  margin: 24px 0px 0px 31px;
+}
+.subject input{
+  display: flex;
+  flex-grow: 10;
+  height: 65px;
+  /* width: 100%; */
+  background: transparent;
+  border: 0px none;
+}
+.body textarea{
+  height: 240px;
+  width: 100%;
+  background: transparent;
+  border: 0px none;
+  padding: 3% 4%;
+}
+
+
+#results{
+  width: 63%;
+  margin: 0px auto;
+  margin-top: 0px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/* New css ends here */
+
+/* Footer css starts from here */
+
+.footer{
+  background-color: #e6e6e6;
+  /* color:rgb(255, 255, 255); */
+  padding:10px;
+  /* text-align:center; */
+  display: flex;
+}
+
+.footer input{
+  display: flex;
+  flex-direction: column;
+  background-color: #1a447c;
+  box-shadow: none;
+  border: 0px none;
+  color: #fff;
+  padding: 10px 16px;
+}
+.footer button{
+  display: flex;
+  flex-direction: column;
+  background-image: url("bin.png");
+  width: 24px;
+  height: 25px;
+  background-size: cover;
+  border: 0px none;
+  margin-left:auto;
+  background-color: transparent;
+  margin-top: 6px;
+  margin-right: 6px;
+}

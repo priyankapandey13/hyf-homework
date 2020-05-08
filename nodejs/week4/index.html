@@ -1,0 +1,203 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Spam Detector</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+  
+</head>
+    <body>
+
+        <iframe name="blankframe" style="display:none" src="home:blank"></iframe>
+        <!-- autocomplete="on"  action="about:blank"-->
+        <!-- <form autocomplete="off" target="blankframe" action="home:blank"> -->
+            <div class="mailcontainer">
+                <span class="head">
+                    New Mail
+                </span>
+                <div class="subject">
+                    <lable>Subject:</lable>
+                    <input type="text" id="subject" name="subject" placeholder="Enter subject here">
+                </div>
+                <div class="body">
+                    <textarea rows="4" cols="50" id="mailbody"></textarea>
+                </div>
+
+                <div class="footer">
+                    <input type="submit" id="validatebtn" value="Validate Mail">
+                    <button id="clear"></button>
+                </div>
+            </div> 
+            <div id="results">
+                <ul>
+                    <li id="hasuppercase"></li>
+                    <li id="subjhaskeyword"></li>
+                    <li id="bodhaskeyword"></li>
+                    <li id="hashello"></li>
+                </ul>
+            </div>
+        <!-- </form> -->
+    </body>
+
+<script>
+
+
+    let subj = document.getElementById("subject").value;
+    let mailbody = document.getElementById("mailbody").value;
+
+    
+
+//   **************************************************************************************************************************************
+
+
+class Email {
+
+    constructor(subject, body) {
+    this.subject = subject;
+    this.body = body;
+    }
+
+    percentage(){
+     // To calculate the percentage of capital words
+    const capsCount = this.body.replace(/[^A-Z]/g, "").length; 
+    const totalCount = this.body.length - this.body.split(' ').length + 1; // This will count the total words not the spaces
+    const letterPercent = (capsCount*100/totalCount).toFixed(2);       // I got the percentage here and then limit the percentage decimal to two
+    document.getElementById("hasuppercase").innerHTML = `Your email body has ${letterPercent}% uppercase characters`;
+    return letterPercent;
+    }
+
+    subjkeymatch(){
+    //  Checking for words like : Viagra, Offer, Free, Business Proposal
+        const keywords = ['Viagra', 'Offer', 'Free', 'Business Proposal'];
+
+        const keywordLowerCase = keywords.map(item=> item.toLowerCase())    // keywords in lowercase..
+        const subjLowerCase = this.subject.toLowerCase();    // Mail body in lowercase..
+                
+        let keyinsubj = false;
+        keywordLowerCase.map(item=> {
+            if(subjLowerCase.includes(item)) 
+                {
+                    document.getElementById("subjhaskeyword").innerHTML = `Subject contain word: ${item}`;
+                    return keyinsubj = true;       // If ans has [ false, true, false, false ], So i need to check for atleast true one
+                }else{
+                    return;
+                }
+            })
+            
+        return keyinsubj;
+    }
+
+    bodykeymatch(){
+    //  Checking for words like : Viagra, Offer, Free, Business Proposal
+        const keywords = ['Viagra', 'Offer', 'Free', 'Business Proposal'];
+
+        const keywordLowerCase = keywords.map(item=> item.toLowerCase())    // keywords in lowercase..
+        const bodyLowerCase = this.body.toLowerCase();    // Mail body in lowercase..
+                
+        let iskeythere = false;
+        keywordLowerCase.map(item=> {
+            if(bodyLowerCase.includes(item)) 
+                {
+                    document.getElementById("bodhaskeyword").innerHTML = `Body contain word: ${item}`;
+                    return iskeythere = true;       // If ans has [ false, true, false, false ], So i need to check for atleast true one
+                }else{
+                    return;
+                }
+            })
+            
+        return iskeythere;
+    }
+            
+    subjectkeymatch(){
+    // Subject only contains the string "Hello"
+    const subjectKeys = ['Hi','Hello','world']; // Checking for more then 1 word in subject
+
+    const subjectKeyLowerCase = subjectKeys.map(item=> item.toLowerCase())    // keywords in lowercase..
+    const subjectLowerCase = this.subject.toLowerCase();    // Mail body in lowercase..
+    let isSubjectTrue = false;
+    subjectKeyLowerCase.map(item=> {
+        if(subjectLowerCase === item)
+            { 
+                document.getElementById("hashello").innerHTML = `Subject only contains: ${item}`;
+                return isSubjectTrue = true;
+             }else{
+                return;
+            } 
+        })
+        return isSubjectTrue;
+            
+    }
+
+}
+
+ 
+class SpamDetector{
+
+    isSpam(email){
+          
+        const letterPercent = email.percentage();
+        const keyinsubj = email.subjkeymatch();
+        const iskeythere = email.bodykeymatch();
+        const isSubjectTrue = email.subjectkeymatch();
+
+        if(letterPercent >= 60 || keyinsubj == true || iskeythere == true || isSubjectTrue == true)
+        {
+            return (`This email is a SPAM!!!`)
+        }
+        else{
+            return ("This mail is not a spam")
+        }
+    }
+}
+
+
+function getspamresult(){
+
+    let emailFromOldFriend = new Email(subj, mailbody);
+    const spamDetector = new SpamDetector();
+    // console.log(spamDetector.isSpam(emailFromOldFriend));
+    alert(spamDetector.isSpam(emailFromOldFriend));
+
+}
+
+// document.getElementById("validatebtn").addEventListener("keypress", function popup1(){    
+//     if( subj || mailbody){
+
+//     } else if(!subj){ 
+//         alert("Email subject can not be blank");
+
+//     }else if(!mailbody){
+//         alert("Email body can not be blank");
+
+//     }
+// });
+
+document.getElementById("validatebtn").addEventListener("click", function popup(){    
+
+    if(subj == "" || mailbody){ 
+        alert("Email subject can not be blank");
+
+    }else if(subj || mailbody == ""){
+        alert("Email body can not be blank");
+
+    } else if( subj || mailbody){
+        getspamresult();   
+    }
+});
+
+
+document.getElementById("clear").addEventListener("click", function popup(){      
+    document.getElementById("subject").value="";
+    document.getElementById("mailbody").value="";
+    alert("It's done, email is empty");
+});
+
+
+</script>
+    
+
+</html>

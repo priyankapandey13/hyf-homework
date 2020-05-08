@@ -2,17 +2,42 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-function TodoListShow(props){
-  return <li>{props.description}, {props.date}</li>
+
+
+function TodolistItem(props) {
+  return <li>{props.todoitem.descridtion} {props.todoitem.time}</li>;
+}
+  
+
+class TodoComponent extends React.Component {
+  state = { 
+    Todo : [ 
+    {descridtion : 'Get out of bed', time : 'Wed Sep 13 2017'},
+    {descridtion : 'Brush teeth', time : 'Thu Sep 14 2017'},
+    {descridtion : 'Eat breakfast', time : 'Fri Sep 15 2017' },], }
+  
+  
+    render() { 
+    return (
+      <React.Fragment>
+        <ul>
+        {this.state.Todo.map((todoitem, index)=>
+        <TodolistItem 
+        key={index}
+        todoitem={todoitem}></TodolistItem>
+      )}
+      </ul>
+      </React.Fragment>
+    );
+  }
 }
 
 
-  
 const root = document.getElementById('root');
 ReactDOM.render(
-  <ul>
-    <TodoListShow description ="Get out of bed" date="Wed Sep 13 2017"/>
-    <TodoListShow description ="Brush teeth" date="Thu Sep 14 2017"/>
-    <TodoListShow description ="Eat breakfast" date="Fri Sep 15 2017"/>
-  </ul>,
-root);
+  <React.StrictMode>
+    <TodoComponent></TodoComponent>
+  </React.StrictMode>   
+  ,root);
+
+  

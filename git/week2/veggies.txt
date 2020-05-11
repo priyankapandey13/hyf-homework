@@ -1,5 +1,7 @@
 Potato
 Peas
-Corn
+Capcicum
 Tomato
 Spinach
+Corn
+Beans

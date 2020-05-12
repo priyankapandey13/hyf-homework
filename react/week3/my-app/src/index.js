@@ -7,7 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Example from "./react-datepicker";
 
 
-const TodoListItems=(props)=>{
+const TodoListItems=(props) => {
   const editstate = props.todoitem.editstate;
   const details = editstate ? 
                   <input type="text" onChange={props.UpdateTodo} value={props.todoitem.description} /> : 
@@ -23,12 +23,11 @@ const TodoListItems=(props)=>{
 
 function fetchlist(){
   const URL='https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw';
-  return fetch(URL).then(response=>response.json())    
+  return fetch(URL).then(response => response.json())    
 }
 
 class TodoList extends React.Component {
   state = {
-    index: '',
     description: '',
     deadline: '',
     checked: false,
@@ -45,7 +44,7 @@ class TodoList extends React.Component {
     })
   }
 
-  AddTodoItems=(description, deadline)=>{    
+  AddTodoItems=(description, deadline) => {    
     if(!this.state.description){
       alert("Please provide the description")
     return;
@@ -57,7 +56,6 @@ class TodoList extends React.Component {
       Todo : [...this.state.Todo, {description : description, deadline : deadline, completed: false}],
     })
   };
-
 
   ToggleCompleted = (currentIndex) => {
     this.setState({
@@ -73,7 +71,7 @@ class TodoList extends React.Component {
     }); 
   };
 
-  EditTodo = (props, description)=>{ 
+  EditTodo = (props, description) => { 
     this.setState({
     Todo: this.state.Todo.map((list, index) => {
       if (props === index) { 
@@ -85,49 +83,42 @@ class TodoList extends React.Component {
     });
   }
 
-  Decisionmaker=(props)=>{
-    if(this.state.editstate === false){
-      return this.EditTodo;
-    }else{
-      return this.Updatedesc;
-    }
-  }
-
-  DeleteTodo = (currentIndex)=>{
+  DeleteTodo = (currentIndex) => {
     this.setState({
-      Todo : this.state.Todo.filter((_todo, index)=> currentIndex !== index),
+      Todo : this.state.Todo.filter((_todo, index) => currentIndex !== index),
     });
   };
   
-  UpdateTodo = (currentIndex, updates)=>{
+  UpdateTodo = (currentIndex, updates) => {
 
     (updates.description==='') ? (alert("Description can not be blank, please write something")) : 
-      this.setState({
-        Todo: this.state.Todo.map((list, index) => {
-          if (currentIndex === index) {
-            return { ...list, ...updates}       
-            } else {
-              return list;
-            }
-        }),
-      });
+    this.setState({
+      Todo: this.state.Todo.map((list, index) => {
+        if (currentIndex === index) {
+          return { ...list, ...updates}  
+        } else {
+            return list;
+          }
+      }),
+    });
   };
  
-  handleChange=(event)=>{   
+  handleChange=(event) => {   
     this.setState({description: event.target.value});
   }
 
-  handletimeChange=(event)=>{
-    let fulldate = moment(event).format("DD/MM/YYYY")
-    this.setState({deadline: fulldate});
-    let todaysdate = new Date();
-    if(event < todaysdate)
+  handletimeChange=(event) => {    
+    const fulldate = moment(event).format("DD/MM/YYYY")
+    const todaysdate = new Date();
+    if(moment(event)._d < todaysdate)
     {
       alert("You are not allowed to select an older date, Try again");
+    }else{
+      this.setState({deadline: fulldate});
     }
   }
 
-  handleSubmit=(event)=>{
+  handleSubmit=(event) => {
     event.preventDefault(); 
     this.AddTodoItems(this.state.description, this.state.deadline);
     this.setState({description: "", deadline: ""});
@@ -143,16 +134,16 @@ class TodoList extends React.Component {
         <Counter initialCounter={0} />
         
         <ul>
-          {this.state.Todo.map((todoitem, index)=> ( 
+          {this.state.Todo.map((todoitem, index) => ( 
           <TodoListItems 
           key={index}
           todoitem={todoitem}
-          AddTodoItems={()=> this.AddTodoItems(index)}
+          AddTodoItems={() => this.AddTodoItems(index)}
           DeleteTodo={() => this.DeleteTodo(index)}
           EditTodo={() => this.EditTodo(index)}
           UpdateTodo={(event) => this.UpdateTodo(index, {description: event.target.value})}
           ToggleCompleted={() => this.ToggleCompleted(index)}
-          Todotest={()=> this.Todotest(index)}
+          Todotest={() => this.Todotest(index)}
           />
           ))
           }
@@ -169,7 +160,6 @@ class TodoList extends React.Component {
     )
   }
 }
-
 
 const root = document.getElementById('root');
 

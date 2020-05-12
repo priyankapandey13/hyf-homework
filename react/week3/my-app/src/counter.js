@@ -1,7 +1,5 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import './index.css';
-//********************************************************************************************************************************************************* */
 
 class Counter extends React.Component {
     state = { counter: this.props.initialCounter };
@@ -15,7 +13,6 @@ class Counter extends React.Component {
   render() {
     return <div>
        <p> You have used  {this.state.counter} seconds</p>
-
     </div>;
   }
 }

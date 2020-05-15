@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  background-color: #e9ecef !important;
+}
+ul,
+li {
+  list-style: none;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.Userlist ul {
+  padding: 0px;
+}
+
+.Userlist > ul > li {
+  border-radius: 7px 44px 44px 7px;
+  background-color: #fff;
+  margin: 2% 0px 0px 0px;
+  box-shadow: 1px 1px 5px #cdcdcd;
+}
+
+.Userlist > ul > li > div > img {
+  width: 20%;
+  border-radius: 50%;
+}
+
+/* **********************************************************************************************************************Bootstrap helper css */
+
+.search-bar {
+  border-radius: 10rem;
+  background: #fff;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+}
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.personalprofile{
+  background-color: #6e00ff;
+}
+.personalprofile::before{content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  pointer-events: none;
+  height: 430px;
+  background-color: #6e00ff;
+  border-bottom-left-radius: 2.20rem;
+}
+.personalprofile > .card{
+  background-color: transparent;
+  border: 0px none;
+}
+.personalprofile > .card > .row > div > Img{
+  max-width: 300px;
+}

@@ -70,8 +70,6 @@ function fetchmoviedata() {
     });
 }
 
-
-
 function showtabulardata(inputarray) { // function for tabular format
 
   let html = "<table border='1|1' width='100%'>";
@@ -106,16 +104,6 @@ function showlisting(inputdata) { // function for listing format
 
 document.getElementById("movlist").addEventListener("change", fetchmoviedata);
 
-
-
-
-
-
-
-
-
-
-
 // --------------------------------------------------------------------------------   Promise that resolves after set time
 
 // Create a function that has one parameter: resolveAfter. Calling this function will return a promise that resolves after the resolveAfter seconds has passed.
@@ -130,12 +118,6 @@ function resolvedpromise(resolveAfter) {
     }, resolveAfter * 1000);
   });
 }
-
-
-
-
-
-
 
 
 // --------------------------------------------------------------------------------   Rewrite time 
@@ -156,9 +138,6 @@ let setTimeoutPromise = new Promise((resolve, reject) => {
 setTimeoutPromise.then((successMessage) => {
   console.log("Called after " + successMessage) 
 });
-
-
-
 
 
 // -------------------------------------------------------------- getCurrentLocation (navigator.geolocation.getCurrentPosition)
@@ -208,8 +187,6 @@ setTimeoutPromise.then((successMessage) => {
 // }
 
 // myloc()
-
-
 
 
 // --------------------------------------------------------------------------------   Fetching and waiting

@@ -38,6 +38,4 @@ ReactDOM.render(
   <React.StrictMode>
     <TodoComponent></TodoComponent>
   </React.StrictMode>   
-  ,root);
-
-  
+  ,root);  

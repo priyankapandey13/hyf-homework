@@ -22,10 +22,8 @@
           box.style.top = y;
       });
   }
-
   randomizeStartPosition();
-
-
+  
   const targets = document.querySelectorAll('ul.targets li');
   // continously check if circles has been added to the right targets
   setInterval(() => {
@@ -38,15 +36,13 @@
           setTimeout(() => span.classList.add('shown'), 300);
       }
   }, 10);
-
+  
   function setTargetFulfilled(box, targetBox, fulfilledPosition) {
-      const renderedClientBox = box.getBoundingClientRect();
-      
+      const renderedClientBox = box.getBoundingClientRect();      
       if (renderedClientBox.left === fulfilledPosition.x && renderedClientBox.top === fulfilledPosition.y) {
           targetBox.classList.add('fulfilled');
       }
   }
-
 
   /**
    * @param {DOMelement} boxToMove - A DOM element of the box to move
@@ -60,6 +56,5 @@
           boxToMove.addEventListener('transitionend', resolve);
       });
   }
-
   window.moveElement = moveElement;
 }

@@ -11,35 +11,35 @@ import ListItems from './userListItems';
 // Context
 const Contextprovider = Context.Provider;
 
-function FetchArray(event){
+function fetchArray(event){
   const URL=`https://api.github.com/search/users?q=${event}`;
     return fetch(URL).then(response => response.json())        
 }
 
-class TodoList extends React.Component{
+class UserList extends React.Component{
   state = {
     isLoading: false,
-    Todo: [],
+    User: [],
   }
 
   fetchlist=(event) => {    
-    FetchArray(event).then(data => {     
-      this.setState({ Todo: data.items})
+    fetchArray(event).then(data => {     
+      this.setState({ User: data.items})
     }).catch((error) => {
       if(error){
       alert(`This Process Failed : ${error}`);
       return
       }
     }).finally(() => {
+      if(!inputevent){
+        return
+      }
       this.setState({isLoading:false})
     })
   }
 
   handleChange=(event) => {
     const inputevent = event.target.value;
-    if(!inputevent){
-      return
-    }
     this.setState({isLoading:true})
     this.fetchlist(inputevent);
   }
@@ -51,13 +51,13 @@ class TodoList extends React.Component{
   render(){
     const contextValue={
       state: this.state,
-      Todo:this.state.Todo,
+      User:this.state.User,
       handleChange:this.handleChange,    
     }
         
     return (
       <Contextprovider value={contextValue}>
-        <h1>Todo list</h1>  
+        <h1>User list</h1>  
         <Searchuser/>
         <ListItems/>
       </Contextprovider>
@@ -67,7 +67,7 @@ class TodoList extends React.Component{
 
 ReactDOM.render(
   <React.StrictMode>
-    <TodoList/>    
+    <UserList/>    
   </React.StrictMode>,
   document.getElementById('root')
 );

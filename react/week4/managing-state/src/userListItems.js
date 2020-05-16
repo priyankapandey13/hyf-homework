@@ -1,12 +1,15 @@
 import React from 'react';
 import Context from './context'
-import TodoListItems from './TodoListItems';
+import UserListItems from './TodoListItems';
 
 function ListItems(){
-  const { Todo , state } = React.useContext(Context);  
+  const { User , state } = React.useContext(Context);
+  if(!User){
+    return "Nothing to show here";
+  }
   const status = state.isLoading
   ? "Loading . . ."
-  : state.Todo.length === 0
+  : state.User.length === 0
   ? "No results"
   : "";
 
@@ -14,10 +17,10 @@ function ListItems(){
     <div>
       {status}
       <ul>
-        {Todo.map((todoitem, index) => (  
-          <TodoListItems 
+        {User.map((useritem, index) => (  
+          <UserListItems 
             key={index}
-            todoitem={todoitem}
+            useritem={useritem}
           />
         ))}
       </ul>

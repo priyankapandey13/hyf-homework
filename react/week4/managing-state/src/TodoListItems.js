@@ -1,15 +1,12 @@
 import React from 'react';
 
-const TodoListItems=(props) => {    
-  const details = <div>
-                    <span>{props.todoitem.login}</span>  
-                    <img src={props.todoitem.avatar_url} alt={props.todoitem.avatar_url}></img>
-                  </div>
+const UserListItems=(props) => {
   return <li>
             <div>
-              {details}
+              <span>{props.useritem.login}</span>  
+              <img src={props.useritem.avatar_url} alt={props.useritem.avatar_url}></img>
             </div>
           </li>;
 }
 
-export default TodoListItems;
+export default UserListItems;

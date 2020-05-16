@@ -34,7 +34,7 @@ class Header extends React.Component {
                 aria-controls="navbarHeader"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
-              >
+              > 
                 <span className="navbar-toggler-icon"></span>
               </button>
             </div>

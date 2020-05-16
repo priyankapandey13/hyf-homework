@@ -1,5 +1,6 @@
 import React from "react";
 import Context from "./context";
+// for Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -12,7 +13,7 @@ function UserRouter() {
   const { Todo } = React.useContext(Context);
   const { userId } = useParams();
   const mainuser = Todo.find((users) => users.id === Number(userId));
-  //===================================================================For followers information */
+  //=================================================================== For followers information */
 
   const URL = `https://api.github.com/users/${mainuser.login}/followers`;
   React.useEffect(() => {

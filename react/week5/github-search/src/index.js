@@ -2,18 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Header from "./header";
-// for Bootstrap
+// for Bootstrap 
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
 import UserRouter from "./routercomponent";
-// Importing components
+// Importing components 
 import Context from "./context";
 import Searchuser from "./searchuser";
 import ListItems from "./userListItems";
-// Context
+// Context 
 const Contextprovider = Context.Provider;
 function FetchArray(event) {
   const URL = `https://api.github.com/search/users?q=${event}`;

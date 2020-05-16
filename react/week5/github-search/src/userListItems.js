@@ -1,6 +1,7 @@
 import React from "react";
 import Context from "./context";
 import TodoListItems from "./TodoListItems";
+// for Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";

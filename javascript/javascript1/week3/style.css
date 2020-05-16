@@ -58,7 +58,7 @@ label {
 }
 input[type="text"]{
       border-color: #d2d6d9;
-      display: block;
+      display: inline;
       width: 80%;
       font-size: 14px;
       font-weight: 400;
@@ -79,9 +79,7 @@ input[type="checkbox"] {
       margin-bottom: 36px;
 }
 
-label {
-          display: inline-block;
-      }
+
   
 
 button {
@@ -162,9 +160,42 @@ article h2{background-color:#ded3f68f;
 
 
 
+  article > div > div{width:100%;padding: 10px 0px;}
 
-  article > div > div:nth-child(4){display: flex;}
+article > div > div:nth-child(4) > span, article > div > div:nth-child(3) > span{flex: 1;}
+article > div > div:nth-child(4) > input{
+  width: 39%;
+  display: inline;
+}
 
+#searchedSongslist, #searchedPrivateSongslist {
+width: 100%;line-height: 27px;
+}
+
+
+#searchedSongslist > a > img, #searchedPrivateSongslist > a > img, #savedSong > img{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 5px;
+  margin-left: 8px;
+}
+
+#searchedSongslist > a, #searchedSongslist > a, #savedSong > img{
+  position: relative;
+}
+#searchedSongslist > a:hover::after,
+#searchedSongslist > a:hover::after{
+  content: attr(alt);
+  display: block;
+  position: absolute;
+  padding: 11px 13px;
+  background-color: #000000ad;
+  bottom: 16px;
+  border-radius: 4px;
+  color: #fff;
+  right: 0px;
+}
 /* Css for event application ends here */
 
 /* Footer css starts from here */

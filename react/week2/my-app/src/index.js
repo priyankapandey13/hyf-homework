@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Counter from "./counter";
-
-//********************************************************************************************************************************************************* */
 const TodoListItems=({todoitem, toggleCompleted, deleteTodo}) => {
   return <li className={ (todoitem.completed) ? "done": "not-done" }>
     <div>{todoitem.name}</div>
@@ -12,12 +10,6 @@ const TodoListItems=({todoitem, toggleCompleted, deleteTodo}) => {
     <label></label>
   </li>;
 }
-
-
-
-
-
-
 
 class TodoList extends React.Component {
   state ={
@@ -47,7 +39,6 @@ class TodoList extends React.Component {
     value:'',
   };
 
-
   addTodoItems=(taskname) => {
     if(!this.state.taskname){
       alert("Please provide the taskname")
@@ -57,7 +48,6 @@ class TodoList extends React.Component {
       todo : [...this.state.todo, {name : taskname, completed: false}],
     })
   };
-
 
   toggleCompleted = (currentIndex) => {
    this.setState({
@@ -73,21 +63,18 @@ class TodoList extends React.Component {
    }); 
   };
 
-
   deleteTodo = (currentIndex) => {
     this.setState({
       todo : this.state.todo.filter((_todo, index) => currentIndex !== index),
     });
   };
 
- 
   handleChange=(event) => {    
     this.setState({taskname: event.target.value});  
   }
 
   render(){
-    if(!this.state.todo.length){
-      
+    if(!this.state.todo.length){    
       return <span className="voidmsz">There are no items to show</span>;
     }
     return (

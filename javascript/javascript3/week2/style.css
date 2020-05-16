@@ -1,16 +1,11 @@
 body, input, textarea, select{font-family:Roboto;font-size:14px;letter-spacing:0.06em;}
 html, body, ul, li, p{list-style:none;padding:0px;margin:0px;}
 
-
 h1, h2, h3, h4, h5, p{font-weight:normal;padding:0px;margin:0px;}
 h1{font-size:40px;text-transform: uppercase;font-weight: bold;}
 h2{font-size:20px;margin-bottom: 40px;}
 
-
-
 /*  Common css classes  */
-
-
 
 header{
   background-color:rgb(23, 23, 24);
@@ -21,7 +16,6 @@ header img{
   width: 170px;
 }
 
-
 /* body css starts from here */
 section{background: #f3f7ec; padding: 3% 4%;}
 #resultbox{box-shadow: 0 10px 40px
@@ -31,19 +25,18 @@ section{background: #f3f7ec; padding: 3% 4%;}
   margin: auto;
 }
 #resultbox > div{padding-bottom: 2em;
-  border-bottom: 1px solid #c3b7ff;
+  /* border-bottom: 1px solid #c3b7ff; */
   margin-bottom: 2em;
-  color: #fc7d0d;
 }
 #resultbox > div:last-child{
   padding-bottom: 0em;
   border-bottom: 0px;
   margin-bottom: 0em;
+  max-height: 210px;
+  overflow-y: scroll;
 }
 
-
 /* New css starts from here */
-
 
 main {
   margin: 0 auto;
@@ -54,7 +47,7 @@ main label {
       display: block;
       margin-bottom: 8px;
 }
-main input.firstname, main input.lastname, main select {
+input.firstname, input.lastname, select {
       border-color: #d2d6d9;
       display: block;
       width: 50%;
@@ -70,18 +63,17 @@ main input.firstname, main input.lastname, main select {
       margin-bottom: 12px;
 }
 
-main > input[type="checkbox"]{
+input[type="checkbox"]{
       width: 15px;
       height: 15px;
       margin-bottom: 36px;
 }
 
-main label {
+label {
           display: inline-block;
       }
   
-
-main button {
+button {
       padding: 12px 24px;
       border: none;
       height: 60px;
@@ -100,19 +92,17 @@ main button {
       margin-bottom: 24px;
       background: #3ecf8e;
 }
-main button:hover {
+button:hover {
           box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1),
               0 3px 6px rgba(0, 0, 0, 0.08);
           transform: translateY(-1px);
 }
 
-main button:active {
+button:active {
           transform: translateY(1px);
           box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25),
               0 3px 7px -3px rgba(0, 0, 0, 0.3);
 }
-
-  
 .boardingcard {
       background-color: #ededed;
       padding: 24px;
@@ -134,8 +124,18 @@ main button:active {
           display: inline-block;
 }
  
-
-
+#movselected{
+  padding: 15px 13px 0px 13px;
+  margin: -12px;
+}
+#movresult{
+  max-height: 300px;
+  overflow-y: scroll;
+}
+#totalmovies{
+  float: right;
+  margin: 0px;
+  padding: 0px;}
 
 /* New css ends here */
 
@@ -156,4 +156,3 @@ footer{
   padding:10px;
   text-align:center;
 }
-

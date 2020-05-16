@@ -13,10 +13,8 @@ import UserRouter from "./routercomponent";
 import Context from "./context";
 import Searchuser from "./searchuser";
 import ListItems from "./userListItems";
-
 // Context
 const Contextprovider = Context.Provider;
-
 function FetchArray(event) {
   const URL = `https://api.github.com/search/users?q=${event}`;
   return fetch(URL).then((response) => response.json());
@@ -26,7 +24,7 @@ class TodoList extends React.Component {
   state = {
     isLoading: false,
     Todo: [],
-    userId:''
+    userId: "",
   };
 
   fetchlist = (event) => {
@@ -88,7 +86,7 @@ class TodoList extends React.Component {
               </main>
             </Route>
             <Route path="/:userId" exact>
-              <UserRouter/>
+              <UserRouter />
             </Route>
           </Switch>
         </BrowserRouter>

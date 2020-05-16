@@ -33,8 +33,19 @@ code {
   width: 20%;
   border-radius: 50%;
 }
+.Userlist a:link,
+.Userlist a:visited {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.Userlist a:active,
+.Userlist a:hover {
+  color: #000;
+}
 
-/* **********************************************************************************************************************Bootstrap helper css */
+/* ****************************************Bootstrap helper css */
 
 .search-bar {
   border-radius: 10rem;
@@ -45,10 +56,11 @@ code {
   box-shadow: none !important;
 }
 
-.personalprofile{
+.personalprofile {
   background-color: #6e00ff;
 }
-.personalprofile::before{content: "";
+.personalprofile::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -57,12 +69,47 @@ code {
   pointer-events: none;
   height: 430px;
   background-color: #6e00ff;
-  border-bottom-left-radius: 2.20rem;
+  border-bottom-left-radius: 2.2rem;
 }
-.personalprofile > .card{
+.personalprofile > .card {
   background-color: transparent;
   border: 0px none;
 }
-.personalprofile > .card > .row > div > Img{
-  max-width: 300px;
+.personalprofile > .card > .row > div > Img {
+  max-width: 270px;
+}
+.personalprofile a:link,
+.personalprofile a:visited {
+  color: #000;
+  text-decoration: none;
+}
+.personalprofile a:active,
+.personalprofile a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+a.gohomebtn {
+  /* border: 2px solid; */
+  padding: 10px 69px 22px 17px;
+  /* border-radius: 17px 17px 17px 17px; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a.gohomebtn:link,
+a.gohomebtn:visited {
+  background-image: url("images/gohome-black.png");
+  color: #000;
+  text-decoration: none;
+}
+a.gohomebtn:active,
+a.gohomebtn:hover {
+  background-image: url("images/gohome-white.png");
+  color: #fff;
+  text-decoration: none;
 }

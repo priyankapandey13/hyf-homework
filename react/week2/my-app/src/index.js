@@ -2,27 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Counter from "./counter";
-
-//********************************************************************************************************************************************************* */
-const TodoListItems=({todoitem, ToggleCompleted, DeleteTodo})=>{
+const TodoListItems=({todoitem, toggleCompleted, deleteTodo}) => {
   return <li className={ (todoitem.completed) ? "done": "not-done" }>
     <div>{todoitem.name}</div>
-    <button onClick={DeleteTodo}>Delete</button>
-    <input type="checkbox" checked={todoitem.completed} onChange={ToggleCompleted}/>
+    <button onClick={deleteTodo}>Delete</button>
+    <input type="checkbox" checked={todoitem.completed} onChange={toggleCompleted}/>
     <label></label>
   </li>;
 }
 
-
-
-
-
-
-
 class TodoList extends React.Component {
-  // const TodoList =() => {
   state ={
-    Todo : [
+    todo : [
       {
         // id:'1',
         name: 'Get out of bed',
@@ -48,21 +39,19 @@ class TodoList extends React.Component {
     value:'',
   };
 
-
-  AddTodoItems=(taskname)=>{
+  addTodoItems=(taskname) => {
     if(!this.state.taskname){
       alert("Please provide the taskname")
     return;
     }
     this.setState({
-      Todo : [...this.state.Todo, {name : taskname, completed: false}],
+      todo : [...this.state.todo, {name : taskname, completed: false}],
     })
   };
 
-
-  ToggleCompleted = (currentIndex) => {
+  toggleCompleted = (currentIndex) => {
    this.setState({
-     Todo : this.state.Todo.map((todo, index) => {
+     todo : this.state.todo.map((todo, index) => {
        if (currentIndex === index){
         return{
           ...todo,
@@ -74,21 +63,18 @@ class TodoList extends React.Component {
    }); 
   };
 
-
-  DeleteTodo = (currentIndex)=>{
+  deleteTodo = (currentIndex) => {
     this.setState({
-      Todo : this.state.Todo.filter((_todo, index)=> currentIndex !== index),
+      todo : this.state.todo.filter((_todo, index) => currentIndex !== index),
     });
   };
 
- 
-  handleChange=(event)=>{    
+  handleChange=(event) => {    
     this.setState({taskname: event.target.value});  
   }
 
   render(){
-    if(!this.state.Todo.length){
-      
+    if(!this.state.todo.length){    
       return <span className="voidmsz">There are no items to show</span>;
     }
     return (
@@ -98,12 +84,12 @@ class TodoList extends React.Component {
         <Counter initialCounter={0} />        
         
         <ul>
-          {this.state.Todo.map((todoitem, index)=> (
+          {this.state.todo.map((todoitem, index) => (
           <TodoListItems 
           key={index}
           todoitem={todoitem} 
-          DeleteTodo={() => this.DeleteTodo(index)}
-          ToggleCompleted={() => this.ToggleCompleted(index)}
+          deleteTodo={() => this.deleteTodo(index)}
+          toggleCompleted={() => this.toggleCompleted(index)}
           />
           ))
           }
@@ -111,7 +97,7 @@ class TodoList extends React.Component {
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            this.AddTodoItems(this.state.taskname);
+            this.addTodoItems(this.state.taskname);
             this.setState({ taskname: "" });
           }}
         >

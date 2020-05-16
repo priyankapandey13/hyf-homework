@@ -1,10 +1,8 @@
-import React from 'react';
-// import ReactDOM from 'react-dom';
-import './index.css';
-//********************************************************************************************************************************************************* */
+import React from "react";
+import "./index.css";
 
 class Counter extends React.Component {
-    state = { counter: this.props.initialCounter };
+  state = { counter: 0};
 
   componentDidMount() {
     setInterval(() => {
@@ -13,11 +11,12 @@ class Counter extends React.Component {
   }
 
   render() {
-    return <div>
-       <p> You have used  {this.state.counter} seconds on this website</p>
-
-    </div>;
+    return (
+      <div>
+        <p> You have used {this.state.counter} seconds on this website</p>
+      </div>
+    );
   }
 }
 
-export default Counter; 
+export default Counter;

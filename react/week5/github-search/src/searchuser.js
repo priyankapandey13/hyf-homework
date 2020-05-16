@@ -18,5 +18,4 @@ function Searchuser() {
     </div>
   );
 }
-
 export default Searchuser;

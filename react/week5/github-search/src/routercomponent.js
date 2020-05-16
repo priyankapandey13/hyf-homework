@@ -20,7 +20,6 @@ function UserRouter() {
       .then((response) => response.json())
       .then((data) => setFollowers(data));
   }, [URL]);
-
   return (
     //=================================================================== Main user container */
     <Container fluid>

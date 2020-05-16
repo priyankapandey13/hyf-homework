@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const TodoListItems = (props) => {
   return (
     <Col md={3} className="mt-5">
-      <Card style={{ width: "100%" }}>
+      <Card style={{ width: "100%" }}> 
         <Card.Img variant="top" src={props.todoitem.avatar_url} />
         <Card.Body>
           <Card.Title>{props.todoitem.login}</Card.Title>
@@ -21,6 +21,6 @@ const TodoListItems = (props) => {
       </Card>
     </Col>
   );
-};
+}; 
 
 export default TodoListItems;

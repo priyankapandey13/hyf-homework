@@ -8,29 +8,29 @@ import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
-import UserRouter from "./routercomponent";
+import User from "./routercomponent";
 // Importing components 
 import Context from "./context";
 import Searchuser from "./searchuser";
 import ListItems from "./userListItems";
 // Context 
 const Contextprovider = Context.Provider;
-function FetchArray(event) {
+function fetchArray(event) {
   const URL = `https://api.github.com/search/users?q=${event}`;
   return fetch(URL).then((response) => response.json());
 }
 
-class TodoList extends React.Component {
+class UserList extends React.Component {
   state = {
     isLoading: false,
-    Todo: [],
+    User: [],
     userId: "",
   };
 
   fetchlist = (event) => {
-    FetchArray(event)
+    fetchArray(event)
       .then((data) => {
-        this.setState({ Todo: data.items });
+        this.setState({ User: data.items });
       })
       .catch((error) => {
         if (error) {
@@ -59,7 +59,7 @@ class TodoList extends React.Component {
   render() {
     const contextValue = {
       state: this.state,
-      Todo: this.state.Todo,
+      User: this.state.User,
       handleChange: this.handleChange,
     };
 
@@ -86,7 +86,7 @@ class TodoList extends React.Component {
               </main>
             </Route>
             <Route path="/:userId" exact>
-              <UserRouter />
+              <User/>
             </Route>
           </Switch>
         </BrowserRouter>
@@ -97,8 +97,8 @@ class TodoList extends React.Component {
 
 ReactDOM.render(
   <React.StrictMode>
-    <TodoList />
+    <UserList />
   </React.StrictMode>,
   document.getElementById("root")
 );
-export default TodoList;
+export default UserList;

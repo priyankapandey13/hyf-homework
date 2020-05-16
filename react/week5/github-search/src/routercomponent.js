@@ -8,12 +8,11 @@ import { useParams, Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Column from "react-bootstrap/Col";
 
-function UserRouter() {
+function User() {
   const [followers, setFollowers] = React.useState([]);
-  const { Todo } = React.useContext(Context);
+  const { User } = React.useContext(Context);
   const { userId } = useParams();
-  const mainuser = Todo.find((users) => users.id === Number(userId));
-  //=================================================================== For followers information */
+  const mainuser = User.find((users) => users.id === Number(userId));
 
   const URL = `https://api.github.com/users/${mainuser.login}/followers`;
   React.useEffect(() => {
@@ -22,7 +21,6 @@ function UserRouter() {
       .then((data) => setFollowers(data));
   }, [URL]);
   return (
-    //=================================================================== Main user container */
     <Container fluid>
       <Container fluid className="personalprofile">
         <Card>
@@ -84,7 +82,6 @@ function UserRouter() {
         </Card>
       </Container>
       <Container fluid>
-        {/*=================================================================== Followers container */}
         <Row className="flex-sm-fill">
           {followers.map((people) => (
             <div className="col-sm-2 mb-4">
@@ -140,4 +137,4 @@ function UserRouter() {
   );
 }
 
-export default UserRouter;
+export default User;

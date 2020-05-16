@@ -18,5 +18,5 @@ function Searchuser() {
       </form>
     </div>
   );
-}
+} 
 export default Searchuser;

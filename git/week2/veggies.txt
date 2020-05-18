@@ -1,6 +1,10 @@
 Potato
 Peas
+Capcicum
+Tomato
+Spinach
+Corn
+Beans
 Cucumber
 Tomato
 Spinach
-

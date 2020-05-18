@@ -1,5 +1,4 @@
 const express = require("express");
-const app = express();
 const router = express.Router();
 const pool = require("./../database");
 
@@ -28,13 +27,13 @@ const insertMeal = function(request, response){
 
   const {title, description, location, when, max_reservations, price, created_date} = request.body;
   const values ={
-    title : title,
-    description : description,
-    location : location,
-    when : when,
-    max_reservations : max_reservations,
-    price : price,
-    created_date : created_date
+    title,
+    description,
+    location,
+    when,
+    max_reservations,
+    price,
+    created_date
   };
   console.log(values);
   
@@ -117,7 +116,7 @@ const deleteMealById = function (request, response){
 // +++++++++++++++++++++++++++++++++++++++++	// Get meals that has a price smaller than maxPrice + api/meals?maxPrice=50
 
 
-const MealMaxPrice = function(request, response){
+const mealMaxPrice = function(request, response){
   console.log("Get meals by maxPrice with GET request");
 
   const values = request.params.maxPrice;
@@ -136,7 +135,7 @@ const MealMaxPrice = function(request, response){
 
 // +++++++++++++++++++++++++++++++++++++++++	// Get meals that still has available reservations + api/meals?availableReservations=true
 
-const MealWithReservation = function(request, response){
+const mealWithReservation = function(request, response){
 
   const values = request.query.availableReservations; // true
   // const currentdate =
@@ -150,7 +149,7 @@ const MealWithReservation = function(request, response){
             console.log(error);    // throw error;
           }
         // return response.send("This works");
-        const leftusers = Object.number_of_guests - Object.max_reservations;
+        // const leftusers = Object.number_of_guests - Object.max_reservations;
         return response.json(results);
         // return response.json(leftusers);
       });
@@ -164,9 +163,9 @@ const MealWithReservation = function(request, response){
 
 // +++++++++++++++++++++++++++++++++++++++++	// Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
 //  + api/meals?title=Yellow%20lentils%20soup
-// MealWithTitle
+// mealWithTitle
 
-const MealWithTitle = function(request, response){
+const mealWithTitle = function(request, response){
   console.log("Get meals with matching title ");
 
   const values = request.query.title;
@@ -186,7 +185,7 @@ const MealWithTitle = function(request, response){
 
 
 
-const MealAfterDate = function(request, response){
+const mealAfterDate = function(request, response){
 
   const values = request.query.createdAfter;
   console.log(values);
@@ -205,7 +204,7 @@ const MealAfterDate = function(request, response){
 // +++++++++++++++++++++++++++++++++++++++++	// Only specific number of meals + api/meals?limit=4
 
 
-const MealWithLimit = function(request, response){
+const mealWithLimit = function(request, response){
 
   const values = request.query.limit;
   console.log(values);
@@ -232,11 +231,11 @@ router.delete("/:id", deleteMealById);
 
 // ++++++++++++++++++++++++++++++++++++++++++ GET api/meals/ query parameters
 
-router.get("/maxPrice=:maxPrice", MealMaxPrice);
-router.get("/", MealWithReservation);
-router.get("/", MealWithTitle);
-router.get("/", MealAfterDate);
-router.get("/", MealWithLimit);
+router.get("/maxPrice=:maxPrice", mealMaxPrice);
+router.get("/", mealWithReservation);
+router.get("/", mealWithTitle);
+router.get("/", mealAfterDate);
+router.get("/", mealWithLimit);
 
 
 module.exports = router;

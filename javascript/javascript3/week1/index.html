@@ -1,0 +1,82 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+  <head>
+    <!-- Access-Control-Allow-Origin: https://amazing.site -->
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      #bodycontainer {
+        width: 966px;
+        border: 2px solid darkgray;
+        padding: 1%;
+        font-family: roboto;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      #map {
+        margin-top: 10px;
+        width: 1000px;
+        height: 500px;
+      }
+      input[type="text"] {
+        font-size: 14px;
+        font-weight: 400;
+        padding: 12px 8px;
+        color: #2e2e2e;
+        background-color: #fff;
+        border: 1px solid#d2d6d9;
+        border-radius: 5px;
+        margin-right: 5px;
+      }
+      input[type="button"] {
+        padding: 13px 27px;
+        font-size: 15px;
+        color: #fff;
+        background: #3ecf8e;
+        border: none;
+        border-radius: 5px;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Find a cool api</h2>
+      <ul>
+        <li>
+          I found a cool api called "api.thecatapi.com". It has lot of cute cat
+          images.
+        </li>
+        <li>
+          This api includes Breeds, Categories, Id, width, height and URL for
+          cat image.
+        </li>
+        <li>
+          Breed and categories has an array, except all are objects. Categories
+          include id and name of the cat
+        </li>
+        <li>this api includes array of abjects.</li>
+      </ul>
+    </div>
+
+    <div id="bodycontainer">
+      <div id="weatherbox"></div>
+      <div id="citycontainer"></div>
+      <!-- city info container -->
+    </div>
+
+    <div id="locationbox"></div>
+
+    <!-- map container -->
+    <div id="map"></div>
+  </body>
+
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6v5-2uaq_wusHDktM9ILcqIrlPtnZgEk"
+  ></script>
+  <script src="main.js"></script>
+</html>

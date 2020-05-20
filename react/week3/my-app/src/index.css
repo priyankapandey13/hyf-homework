@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+
+
+body {background-color: #101c59;}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+ul, li{padding: 0;}
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}*/
+
+.done{
+  background-color: #23f8b6;
+  color: #000;
+  border: 10px solid;
+  border-color: rgba(16, 28, 89, 0.8);
+}
+
+.done div{
+  text-decoration: line-through;
+}
+
+input[type="checkbox"]{
+  opacity: 0;
+  position: absolute;
+  right: 13px;
+  z-index: 10;
+  width: 25px;
+  height: 25px;
+}
+
+input[type="checkbox"] + label{
+  border: 2px solid ;
+  color: #fff; 
+  width: 27px;
+  height: 27px;
+  display: block;
+  line-height: 13px;
+  display: block;
+  font-size: 36px;
+  font-weight: bolder;
+}
+
+input[type="checkbox"]:checked + label{
+  border-color : #12be89;
+}
+input[type="checkbox"] + label{
+  border-color: #ec13bc;
+}
+
+input[type="checkbox"]:checked + label::before{
+  content: '✓';
+  
+}
+
+li button, li input[type="button"]{
+  /* background-color: #12be89; */
+  border: 0px none;
+  padding: 1% 3%;
+}
+
+li.done button,li.done input[type="button"]{
+  background-color: #12be89;
+}
+
+li.not-done button,li.not-done input[type="button"]{
+  background-color: #ec13bc;
+  color: #fff;
+}
+li form{
+  display: flex;
+  flex: auto;
+}
+.not-done{
+  background-color:#fb4dbe;
+  color: #fff;
+  border: 10px solid;
+  border-color: rgba(16, 28, 89, 0.8);
+} 
+
+#root{
+  width: 50%;
+  margin: 3% auto 0px;
+  padding: 2% 0px;
+  position: relative;
+}
+
+
+#root h1{
+  color: #fff;
+
+font-family: 'Lobster', cursive;
+
+font-size: 55px;
+
+font-weight: normal;
+
+margin: 0px;
+
+line-height: 25px;
+}
+
+#root p{font-family: arial;
+
+  color: #fff;
+  
+  font-size: 16px;
+}
+
+li{
+  list-style: none;
+  position: relative;
+  padding: 2%;
+  font-size: 15px;
+  background: bisque;
+  display: flex;
+  margin-bottom: 2%;
+}
+li div{
+  display: flex;
+  flex-grow: 1;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+.form{
+  position: absolute;
+  top: 30px;
+  right: 0px;
+}
+ .form input[type= "text"]{ /*, .form button */
+  padding: 10px;
+  border: 10px solid;
+  border-color: #15276f;
+}
+.form input[type= "text"]{
+  border-right: 0px;
+}
+.form button:last-child{
+  padding: 10px;
+  border: 10px solid;
+  border-color: #15276f;
+  padding: 10px 20px;
+  background-color: #223a92;
+  color: #fff;
+  border-left: 0px;
+}
+.react-datepicker__tab-loop{
+  display: inline-block;
+}
+.voidmsz{
+  color: #000;
+background-color: #fff;
+padding: 20px 10px;
+width: 100%;
+text-align: center;
+display: block;
+border: 10px solid #1d2496;
+}

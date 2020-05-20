@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "title":"Food Quality review",
+      "createdBy":"Priyanka",
+      "numberOfStars": 3,
+      "content": "Best meal ever",
+      "mealId": 1,
+      "createdAt": 12345
+    },
+    {
+      "id": 2,
+      "title":"Demo taste review",
+      "createdBy":"Priyanka Sharma",
+      "numberOfStars": 5,
+      "content": "demo review",
+      "mealId": 3,
+      "createdAt": 12345
+    },
+    {
+      "id": 3,
+      "title":"Food & Ambiance",
+      "createdBy":"Priyanka",
+      "numberOfStars": 2,
+      "content": "demo review",
+      "mealId": 2,
+      "createdAt": 12345
+    }
+  ]

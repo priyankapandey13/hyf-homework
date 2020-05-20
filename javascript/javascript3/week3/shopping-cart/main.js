@@ -1,3 +1,4 @@
+// const userdetail=[];
 class Product {
   constructor(name, price) {
     this.name = name;
@@ -6,13 +7,17 @@ class Product {
 
   convertToCurrency(currency) {
     fetch(`https://api.exchangerate-api.com/v4/latest/DKK`)
-      .then((response) => response.json())
-      .then((data) => {
-        let currencyConvert = (data.rates[currency] * this.price).toFixed(2);
-        console.log(
-          `Price of ${this.name} in ${currency} is ${currencyConvert}`
-        );
-      });
+    .then((response) => response.json())
+    .then((data) => {
+      return this.getPrice(data, currency);
+    });
+  }
+  
+  getPrice(data, currency){
+    let currencyConvert = (data.rates[currency] * this.price).toFixed(2);
+    console.log(
+      `Price of ${this.name} in ${currency} is ${currencyConvert}`
+    );
   }
 }
 
@@ -28,23 +33,23 @@ class ShoppingCart {
 
   removeProduct(product) {
     // Implement functionality here
-    const removedProduct = this.products.filter(
+    const updatedArrayList = this.products.filter(
       (itemname) => product !== itemname
-    );
-    this.products = removedProduct;
+    );   
+    this.products = updatedArrayList;
   }
 
   searchProduct(productName) {
     // Implement functionality here
-    let SearchProductName = this.products.filter(
-      (itemname) => itemname === productName
+    const SearchProductName = this.products.filter(item=> {
+    return (item.name === productName)}
     );
     console.log(SearchProductName);
   }
 
   getTotal() {
     // Implement functionality here
-    const pricelist = this.products.map((product) => product.price);
+    const pricelist = this.products.map(product => product.price);
     const TotalPrice = pricelist.reduce((sum, item) => sum + item);
     console.log(TotalPrice);
     return TotalPrice;
@@ -68,9 +73,10 @@ class ShoppingCart {
     fetch(`https://jsonplaceholder.typicode.com/users/1`)
       .then((Response) => Response.json())
       // .then(data=> console.log(data))
-      .then((user) => {
+      .then(user => {
+        userdetail.push(user);
         this.renderuser(user);
-        return user;
+        // return userdetail;
       });
   }
 
@@ -79,7 +85,6 @@ class ShoppingCart {
     const p = document.createElement("p");
     Div.appendChild(p);
     let total = this.getTotal();
-
     p.innerText = `Hi my name is ${data.name}. I spent total ${total} kr. I can be contacted at : ${data.phone} / ${data.email} or ather website : ${data.website}`;
     this.renderProducts();
   }
@@ -87,7 +92,6 @@ class ShoppingCart {
 
 const shoppingCart = new ShoppingCart("Phone", 3000);
 const flatscreen = new Product("flat-screen", 5000);
-// shoppingCart.addProduct(flatscreen);
 
 const Phone = new Product("Phone", 1000);
 const Fridge = new Product("Fridge", 2000);
@@ -105,13 +109,22 @@ shoppingCart.addProduct(Keyboard);
 
 // console.log(shoppingCart);
 
-// shoppingCart.removeProduct('Playstation');
-// shoppingCart.searchProduct('Playstation');
+shoppingCart.removeProduct('Playstation');
+shoppingCart.searchProduct('Playstation');
 // shoppingCart.getTotal();
 // shoppingCart.renderProducts();
 
-shoppingCart.getUser();
+// shoppingCart.getUser();
+// console.log(userdetail);
 
+const userData = shoppingCart.getUser();
+console.log(userData);
+
+ShoppingCart.renderuser(userData);
+
+// const renderdata = shoppingCart.getUser();
+// const userData = shoppingCart.renderuser(renderdata);
+// console.log(userData);
 // console.log(shoppingCart);
 
 Phone.convertToCurrency("EUR");

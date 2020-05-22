@@ -1,4 +1,3 @@
-// const userdetail=[];
 class Product {
   constructor(name, price) {
     this.name = name;
@@ -51,7 +50,7 @@ class ShoppingCart {
     // Implement functionality here
     const pricelist = this.products.map(product => product.price);
     const TotalPrice = pricelist.reduce((sum, item) => sum + item);
-    console.log(TotalPrice);
+    console.log(`Total price of all products is: ${TotalPrice}`);
     return TotalPrice;
   }
 
@@ -68,15 +67,12 @@ class ShoppingCart {
     });
   }
 
-  getUser() {
+  getUser(){
     // Implement functionality here
-    fetch(`https://jsonplaceholder.typicode.com/users/1`)
+    return fetch(`https://jsonplaceholder.typicode.com/users/1`)
       .then((Response) => Response.json())
-      // .then(data=> console.log(data))
       .then(user => {
-        userdetail.push(user);
-        this.renderuser(user);
-        // return userdetail;
+         return user;
       });
   }
 
@@ -100,6 +96,7 @@ const TV = new Product("TV", 3000);
 const Playstation = new Product("Playstation", 1000);
 const Keyboard = new Product("Keyboard", 800);
 
+// Adding products in Shopping cart
 shoppingCart.addProduct(Phone);
 shoppingCart.addProduct(Fridge);
 shoppingCart.addProduct(laptop);
@@ -107,25 +104,24 @@ shoppingCart.addProduct(TV);
 shoppingCart.addProduct(Playstation);
 shoppingCart.addProduct(Keyboard);
 
-// console.log(shoppingCart);
-
+// Removing products from Shopping cart
 shoppingCart.removeProduct('Playstation');
+
+// Searching for products in Shopping cart
 shoppingCart.searchProduct('Playstation');
+
+// Getting total of all products in Shopping cart
 // shoppingCart.getTotal();
+
+// Rendering all products from Shopping cart
 // shoppingCart.renderProducts();
 
-// shoppingCart.getUser();
-// console.log(userdetail);
+// Getting user details from API and rendering it with it's shopping cart details
 
-const userData = shoppingCart.getUser();
-console.log(userData);
-
-ShoppingCart.renderuser(userData);
-
-// const renderdata = shoppingCart.getUser();
-// const userData = shoppingCart.renderuser(renderdata);
-// console.log(userData);
-// console.log(shoppingCart);
+shoppingCart.getUser()
+.then(userdata => {
+  shoppingCart.renderuser(userdata);
+});
 
 Phone.convertToCurrency("EUR");
 laptop.convertToCurrency("USD");

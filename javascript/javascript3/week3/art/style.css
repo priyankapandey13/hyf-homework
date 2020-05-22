@@ -1,0 +1,193 @@
+body,
+input,
+textarea,
+select {
+  font-family: Roboto;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+}
+html,
+body,
+ul,
+li,
+p {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-weight: normal;
+  padding: 0px;
+  margin: 0px;
+}
+h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+h2 {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+/*  Common css classes  */
+
+header {
+  background-color: rgb(23, 23, 24);
+  color: rgb(255, 255, 255);
+  padding: 10px 30px;
+}
+header img {
+  width: 170px;
+}
+
+/* body css starts from here */
+section {
+  background: #f3f7ec;
+  padding: 3% 4%;
+}
+#resultbox.resultbox {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 5% 6%;
+  width: 60%;
+  margin: auto;
+}
+#resultbox > div {
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+}
+#resultbox > div:last-child {
+  padding-bottom: 0em;
+  border-bottom: 0px;
+  margin-bottom: 0em;
+  height: 29px;
+}
+
+/* New css starts from here */
+
+main {
+  margin: 0 auto;
+  width: 100%;
+}
+
+main label {
+  display: block;
+  margin-bottom: 8px;
+}
+input.firstname,
+input.lastname,
+select {
+  border-color: #d2d6d9;
+  display: block;
+  width: 50%;
+  font-size: 14px;
+  font-weight: 400;
+  height: 40px;
+  padding: 8px;
+  line-height: 1.42857143;
+  color: #2e2e2e;
+  background-color: #fff;
+  border: 1px solid #d2d6d9;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin-bottom: 36px;
+}
+
+label {
+  display: inline-block;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  height: 60px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  color: #fff;
+  transition: all 0.15s ease;
+  text-shadow: 0 1px 3px rgba(36, 180, 126, 0.4);
+  outline: none;
+  cursor: pointer;
+  line-height: 1.5rem;
+  margin-bottom: 24px;
+  background: #3ecf8e;
+}
+button:hover {
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25),
+    0 3px 7px -3px rgba(0, 0, 0, 0.3);
+}
+
+.boardingcard {
+  background-color: #ededed;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 36px;
+  transition: opacity 0.3s;
+}
+
+.boardingcard.hidden {
+  opacity: 0;
+}
+
+.boardingcard h2 {
+  text-align: center;
+}
+
+.boardingcard h3 {
+  display: inline-block;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  border: 12px solid #d3d3d3;
+}
+
+/* New css ends here */
+
+/* Css for event application starts from here */
+#map {
+  width: 100%;
+  height: 500px;
+}
+/* #map > div{display: none;} */
+#map > div:nth-child(0),
+#map > div:nth-child(1) {
+  display: block;
+}
+#map > div:nth-child(4),
+#map > div:nth-child(2),
+#map > div:nth-child(3) {
+  display: none;
+}
+/* Css for event application ends here */
+
+/* Footer css starts from here */
+
+footer {
+  background-color: rgb(52, 58, 64);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-align: center;
+}
